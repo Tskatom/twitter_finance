@@ -54,7 +54,10 @@ def handleTwitterHTTPError(e, t, wait_period=2):
         time.sleep(sleep_time)
         return 2
     else:
-        raise e
+        print >> sys.stderr, "Unexpected exception: %d" % e.e.code
+        time.sleep(wait_period)
+        wait_period *= 1.5
+        return wait_period
 
 
 def _getRemainingHits(t):
@@ -63,7 +66,7 @@ def _getRemainingHits(t):
 
 # A template-like function that can get friends or followers
 def _getFriendsOrFollowersUsingFunc(func, key_name,
-                                    t, r, screen_name=None, limit=10000):
+                                    t, r, screen_name=None, user_id=None, limit=10000):
     cursor = -1
     result = []
     while cursor != 0:
@@ -71,6 +74,7 @@ def _getFriendsOrFollowersUsingFunc(func, key_name,
             t,
             func,
             screen_name=screen_name,
+            user_id=user_id,
             cursor=cursor)
         for _id in response['ids']:
             result.append(_id)
@@ -97,7 +101,7 @@ def getUserInfo(
         user_ids=[],
         verbose=False, sample=1.0):
 
-    if sample < 1.0:
+    if sample < 1.0 and (len(screen_names) >= 300 or len(user_ids) >= 300):
         for lst in [screen_names, user_ids]:
             shuffle(lst)
             lst = lst[:int(len(lst) * sample)]
@@ -119,7 +123,7 @@ def getUserInfo(
                   json.dumps(userinfo))
             r.set(getRedisIdByScreenName(userinfo['id'], 'info.json'),
                   json.dumps(userinfo))
-            info.extend(response)
+        info.extend(response)
 
     while len(user_ids) > 0:
         user_ids_str = ','.join([str(_id) for _id in user_ids[:100]])
@@ -138,7 +142,7 @@ def getUserInfo(
                   json.dumps(userinfo))
             r.set(getRedisIdByScreenName(userinfo['id'], 'info.json'),
                   json.dumps(userinfo))
-            info.extend(response)
+        info.extend(response)
 
     return info
 
