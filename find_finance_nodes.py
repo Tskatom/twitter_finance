@@ -18,7 +18,17 @@ def get_args():
     return ap.parse_args()
 
 
-def exploit_network(t, r, start_node, depth_limit=1):
+def filter_already_download(friend_ids, r):
+    try:
+        keys = r.keys()
+        new_friend_ids = [_id for _id in friend_ids if tu.getRedisIdByScreenName(_id, 'info.json') not in keys]
+        exist_ids = [_id for _id in friend_ids if _id not in new_friend_ids]
+    except:
+        print "---", friend_ids
+    return new_friend_ids, exist_ids
+
+
+def exploit_network(t, r, start_node, depth_limit=1, friend_limit=200):
     users = []
     tu.getUserInfo(t, r, screen_names=[start_node])
     users.append(start_node)
@@ -37,18 +47,31 @@ def exploit_network(t, r, start_node, depth_limit=1):
     users.extend(next_queue)
 
     while depth < depth_limit:
+        #exploit the users only have less than 200 friends
+        #
         depth += 1
         (queue, next_queue) = (next_queue, [])
+        print "%d level, %d users to be exploited" % (depth, len(queue))
         for screen_name in queue:
             #get friend ids
             friend_ids = getFriends(screen_name=screen_name)
+            if len(friend_ids) > friend_limit:
+                continue
+            filter_friend_ids, exist_friend_ids = filter_already_download(friend_ids, r)
             #get friend Info
             friend_infos = tu.getUserInfo(t, r,
-                                          user_ids=friend_ids, sample=0.2)
+                                          user_ids=filter_friend_ids,
+                                          sample=0.2)
+            exist_friend_infos = loadUserInfo(exist_friend_ids, r)
+            friend_infos.extend(exist_friend_infos)
             next_queue.extend([u['screen_name'] for u in friend_infos])
         users.extend(next_queue)
 
     return users
+
+
+def loadUserInfo(friend_ids, r):
+    return [eval(r.get(tu.getRedisIdByScreenName(_id, 'info.json'))) for _id in friend_ids]
 
 
 def main():

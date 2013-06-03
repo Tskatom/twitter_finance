@@ -45,9 +45,9 @@ def handleTwitterHTTPError(e, t, wait_period=2):
         wait_period *= 1.5
         return wait_period
     elif _getRemainingHits(t) == 0:
-        status = t.account.rate_limit_status()
+        status = t.application.rate_limit_status()
         now = time.time()  # UTC
-        when_rate_limit_resets = status['reset_time_in_seconds']
+        when_rate_limit_resets = status['resources']['friends']['/friends/ids']['reset']
         sleep_time = max(when_rate_limit_resets - now, 5)
         print >> sys.stderr, 'Rate limit reached, \
                 Retry in %d secs' % sleep_time
@@ -61,7 +61,7 @@ def handleTwitterHTTPError(e, t, wait_period=2):
 
 
 def _getRemainingHits(t):
-    return t.account.rate_limit_status()['remaining_hits']
+    return t.application.rate_limit_status()['resources']['friends']['/friends/ids']['remaining']
 
 
 # A template-like function that can get friends or followers
