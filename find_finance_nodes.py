@@ -9,7 +9,8 @@ from twitter_login import login
 import functools
 import argparse
 import redis
-
+import json
+import sys
 
 def get_args():
     ap = argparse.ArgumentParser()
@@ -54,24 +55,28 @@ def exploit_network(t, r, start_node, depth_limit=1, friend_limit=200):
         print "%d level, %d users to be exploited" % (depth, len(queue))
         for screen_name in queue:
             #get friend ids
-            friend_ids = getFriends(screen_name=screen_name)
-            if len(friend_ids) > friend_limit:
-                continue
-            filter_friend_ids, exist_friend_ids = filter_already_download(friend_ids, r)
-            #get friend Info
-            friend_infos = tu.getUserInfo(t, r,
+            try:
+                friend_ids = getFriends(screen_name=screen_name)
+                if len(friend_ids) > friend_limit:
+                    continue
+                filter_friend_ids, exist_friend_ids = filter_already_download(friend_ids, r)
+                #get friend Info
+                friend_infos = tu.getUserInfo(t, r,
                                           user_ids=filter_friend_ids,
                                           sample=0.2)
-            exist_friend_infos = loadUserInfo(exist_friend_ids, r)
-            friend_infos.extend(exist_friend_infos)
-            next_queue.extend([u['screen_name'] for u in friend_infos])
+                exist_friend_infos = loadUserInfo(exist_friend_ids, r)
+                friend_infos.extend(exist_friend_infos)
+                next_queue.extend([u['screen_name'] for u in friend_infos])
+            except:
+                print >> sys.stderr, "Error encountered for %s" % screen_name
+                continue
         users.extend(next_queue)
 
     return users
 
 
 def loadUserInfo(friend_ids, r):
-    return [eval(r.get(tu.getRedisIdByScreenName(_id, 'info.json'))) for _id in friend_ids]
+    return [json.loads(r.get(tu.getRedisIdByScreenName(_id, 'info.json'))) for _id in friend_ids]
 
 
 def main():

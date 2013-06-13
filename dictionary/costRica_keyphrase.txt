@@ -1,0 +1,1 @@
+{"dist": 6, "language": "Spanish", "ignoreHash": true, "text": "costa rica", "tokens": [{"form": "value", "neType": "any", "POS": "NOUNSG", "value": "costarica", "lemma": "costarica", "mode": "any"}], "key": "costa rica"}

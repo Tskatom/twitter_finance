@@ -1,0 +1,2782 @@
+{"content": "operaciones entre agentes bursátiles"}
+{"content": "seguro de vida variable"}
+{"content": "retorno sobre el activo"}
+{"content": "swap de acciones"}
+{"content": "letra de cambio no documentada"}
+{"content": "para su información"}
+{"content": "gastos varios"}
+{"content": "límite de deuda"}
+{"content": "calificación dividida"}
+{"content": "apertura del régimen de importación"}
+{"content": "costos de ventas"}
+{"content": "brecha fiscal"}
+{"content": "fondo de acciones"}
+{"content": "mercado eficiente"}
+{"content": "promocion"}
+{"content": "plazas financieras off-shore"}
+{"content": "cuota"}
+{"content": "retorno libre de riesgo"}
+{"content": "orden de pago"}
+{"content": "préstamo con atraso"}
+{"content": "competencia desleal"}
+{"content": "mercados financieros"}
+{"content": "operación sin riesgo"}
+{"content": "transferencias económicas"}
+{"content": "analista de activos financieros"}
+{"content": "sobresuscripta"}
+{"content": "relación precio/ganancia (per)"}
+{"content": "informe de cuenta nueva"}
+{"content": "compañía"}
+{"content": "diversificación de riesgos"}
+{"content": "bienes individuales"}
+{"content": "bono de reestructuración"}
+{"content": "centro financiero"}
+{"content": "casar"}
+{"content": "gastos presupuestados"}
+{"content": "presupuesto base cero"}
+{"content": "acción con derecho a voto"}
+{"content": "transferencia electronica"}
+{"content": "junta de directores"}
+{"content": "bonos que emulan índices"}
+{"content": "coste de oportunidad"}
+{"content": "oferta favorable"}
+{"content": "precio en el mercado extrabursátil"}
+{"content": "toma de posiciones"}
+{"content": "costo laboral"}
+{"content": "aseguradora"}
+{"content": "previsión"}
+{"content": "devaluación"}
+{"content": "estrangulamiento económico"}
+{"content": "liquidación demorada"}
+{"content": "cambio neto"}
+{"content": "impuesto sobre la renta"}
+{"content": "cuentas a pagar"}
+{"content": "papeles defensivos"}
+{"content": "ganancias por tenencia de valores a corto plazo"}
+{"content": "endoso limitado"}
+{"content": "operación a precio de mercado"}
+{"content": "gravamen general"}
+{"content": "prima de conversión"}
+{"content": "fondos bloqueados"}
+{"content": "marco macroeconómico"}
+{"content": "intereses devengados"}
+{"content": "teoría para valuar activos de riesgo"}
+{"content": "calendario"}
+{"content": "pago contra documentos"}
+{"content": "en la situación financiera"}
+{"content": "letra de cambio documentada"}
+{"content": "deudas de cobro dudoso"}
+{"content": "fecha de pago de dividendos"}
+{"content": "negociación fuera de la bolsa"}
+{"content": "dividendo opcional"}
+{"content": "forint"}
+{"content": "nicho"}
+{"content": "acuerdo de cartagena"}
+{"content": "obligación negociable respaldada por activos de otra sociedad"}
+{"content": "activo"}
+{"content": "tasa de retorno antes de impuestos"}
+{"content": "cuenta de corretaje al contado inmediato"}
+{"content": "sistema impositivo"}
+{"content": "análisis de la relación costo-beneficio"}
+{"content": "margen de ganancia"}
+{"content": "orden alternativa"}
+{"content": "vida útil estimada"}
+{"content": "fijar tipo de cambio libre"}
+{"content": "inversiones en bienes de capital"}
+{"content": "debitar cuentas"}
+{"content": "honorarios"}
+{"content": "título valor nominativo"}
+{"content": "sociedad no cotizante"}
+{"content": "anular"}
+{"content": "ganancia realizada"}
+{"content": "comité"}
+{"content": "pago a cuenta"}
+{"content": "tasa de interés real"}
+{"content": "interés mensual"}
+{"content": "ahorro"}
+{"content": "sociedad depositaria"}
+{"content": "amortización acelerada"}
+{"content": "plan de repartición de utilidades"}
+{"content": "criterio contable que se basa en lo percibido"}
+{"content": "bono bullet"}
+{"content": "superávit de capital"}
+{"content": "acción líder"}
+{"content": "coeficiente de volatilidad"}
+{"content": "primera entrada primera salida"}
+{"content": "capital accionario"}
+{"content": "cambio de precio"}
+{"content": "entrega en tiempo y modo"}
+{"content": "auditoría externa"}
+{"content": "orden revocable"}
+{"content": "desdoblamiento"}
+{"content": "contrato de futuros sobre tasas de interés"}
+{"content": "reembarque"}
+{"content": "ganancia"}
+{"content": "economía presupuestaria"}
+{"content": "intermediario a comisión"}
+{"content": "libros de contabilidad"}
+{"content": "impuestos"}
+{"content": "analítico de ingresos"}
+{"content": "masa concursal"}
+{"content": "tarifa"}
+{"content": "prioridad"}
+{"content": "córdoba"}
+{"content": "microeconomía"}
+{"content": "organización"}
+{"content": "junta de acreedores"}
+{"content": "microdevaluación periódica"}
+{"content": "contrato de opciones"}
+{"content": "concepto"}
+{"content": "dividendo propuesto"}
+{"content": "riesgo no sistemático"}
+{"content": "retorno ajustado por exposición a un riesgo"}
+{"content": "valor teórico"}
+{"content": "estado de cuenta"}
+{"content": "asiento de concentración"}
+{"content": "cambio brusco en la dirección del mercado"}
+{"content": "unidad monetaria"}
+{"content": "cerrar una posición abierta"}
+{"content": "bono ascendente"}
+{"content": "cotizacion"}
+{"content": "librador"}
+{"content": "acciones de compañías de servicios públicos"}
+{"content": "pagaré al portador"}
+{"content": "volatilidad"}
+{"content": "sucre"}
+{"content": "agente de dos dólares"}
+{"content": "oligopsonio"}
+{"content": "asignación de recursos"}
+{"content": "inversión presupuestada"}
+{"content": "subasta de bonos soberanos"}
+{"content": "demanda total"}
+{"content": "bono a tasa flotante"}
+{"content": "agente de seguros"}
+{"content": "obligación colateralizada con hipotecas"}
+{"content": "holding bancario"}
+{"content": "población económicamente activa"}
+{"content": "comisión"}
+{"content": "orden de compra"}
+{"content": "mercado ilíquido"}
+{"content": "opción sobre índices"}
+{"content": "bienes gravados"}
+{"content": "retorno esperado"}
+{"content": "comercio"}
+{"content": "interés exacto"}
+{"content": "recuperación"}
+{"content": "autoridad"}
+{"content": "ganancias por diferencias cambiarias"}
+{"content": "crawling peg"}
+{"content": "libre de gravámenes"}
+{"content": "concursado"}
+{"content": "fondos de capital de riesgo"}
+{"content": "cuentas por cobrar"}
+{"content": "cifras semestrales"}
+{"content": "mercado presente"}
+{"content": "renta gravable"}
+{"content": "cupón corto"}
+{"content": "inflación promedio"}
+{"content": "costo de origen"}
+{"content": "beneficio contable"}
+{"content": "asiento de caja"}
+{"content": "renta vitalicia"}
+{"content": "mercado de valores"}
+{"content": "emisión prevendida"}
+{"content": "tendencia descendente"}
+{"content": "sociedad constituida en el exterior"}
+{"content": "globalizacion"}
+{"content": "costo diferido"}
+{"content": "renta vitalicia de pago inmediato"}
+{"content": "delegado fiduciario"}
+{"content": "balance consolidado"}
+{"content": "plan de inversión mensual"}
+{"content": "aumento de capital"}
+{"content": "aviso de ejercicio"}
+{"content": "responsabilidad limitada"}
+{"content": "ultimo día de negociación"}
+{"content": "precio de oferta pública"}
+{"content": "reorganización"}
+{"content": "cotización oficial"}
+{"content": "deudas de difícil cobro"}
+{"content": "venta"}
+{"content": "tramo"}
+{"content": "endeudamiento del sector público"}
+{"content": "título valor exento"}
+{"content": "inversión en activos financieros"}
+{"content": "masa de la quiebra"}
+{"content": "acciones comunes"}
+{"content": "corredor de préstamos hipotecarios"}
+{"content": "cartel de empresas"}
+{"content": "fuera del balance"}
+{"content": "servicios de asesoramiento al inversor"}
+{"content": "múltiplo"}
+{"content": "captura de dividendos"}
+{"content": "pérdida operativa"}
+{"content": "indicador de realizacion"}
+{"content": "estructura de costos"}
+{"content": "cuentas de resultado"}
+{"content": "participación en las utilidades"}
+{"content": "prima de riesgo"}
+{"content": "no rescatable"}
+{"content": "costo indirecto"}
+{"content": "comparación de patrimonios"}
+{"content": "riesgo de incumplimiento"}
+{"content": "casado automático de operaciones"}
+{"content": "cupón de renovación"}
+{"content": "originador"}
+{"content": "inversor neutral respecto al riesgo"}
+{"content": "cuenta de retiro individual"}
+{"content": "dividendos ordinarios"}
+{"content": "embargo de sueldos"}
+{"content": "canasta de monedas"}
+{"content": "devolución"}
+{"content": "política expansionista"}
+{"content": "gastos diferidos"}
+{"content": "préstamo a tasa fija"}
+{"content": "participación en subsidiarias"}
+{"content": "documento por cobrar"}
+{"content": "anticipos a proveedores"}
+{"content": "reservas"}
+{"content": "préstamo sin aval personal"}
+{"content": "actos mercantiles condicionados"}
+{"content": "anualidad por hipoteca revertida"}
+{"content": "análisis de ratios financieros"}
+{"content": "valor actual neto (van)"}
+{"content": "sociedad controlante"}
+{"content": "presupuesto para inversiones en bienes de capital"}
+{"content": "desbordamiento (del tipo de cambio)"}
+{"content": "crédito documentado"}
+{"content": "bono en eurodólares"}
+{"content": "mercado gris"}
+{"content": "auditoría"}
+{"content": "derecho de conversión"}
+{"content": "mando"}
+{"content": "período de veinte días"}
+{"content": "capacidad de generar ganancias"}
+{"content": "hipoteca de segundo grado"}
+{"content": "fondos de renta variable"}
+{"content": "acciones en tesorería"}
+{"content": "prima en colocación de acciones"}
+{"content": "repatriación de capital"}
+{"content": "ingresos per cápita"}
+{"content": "rubro"}
+{"content": "asignación presupuestaria"}
+{"content": "externalidad"}
+{"content": "sector económico clave"}
+{"content": "asiento"}
+{"content": "ganancia por primas"}
+{"content": "indicador de eficiencia interna"}
+{"content": "emisión primaria bajo la par"}
+{"content": "función administrativa"}
+{"content": "opción de venta"}
+{"content": "valor neto según libros"}
+{"content": "compañía semipública"}
+{"content": "doble imposición"}
+{"content": "grupo de los 77"}
+{"content": "política monetaria expansiva"}
+{"content": "creatividad"}
+{"content": "análisis de sensibilidad"}
+{"content": "pérdida neta"}
+{"content": "nueva emisión"}
+{"content": "unidades bloqueadas"}
+{"content": "valores para la reventa"}
+{"content": "solicitud de crédito"}
+{"content": "cuotaparte"}
+{"content": "reserva legal"}
+{"content": "certificado de origen"}
+{"content": "comisión de entrada"}
+{"content": "sociedad de bolsa"}
+{"content": "equilibrio"}
+{"content": "informe provisorio"}
+{"content": "revalúo"}
+{"content": "tasa de interés nominal"}
+{"content": "subvención"}
+{"content": "fideicomiso discrecional"}
+{"content": "compra de la empresa por parte de sus directores"}
+{"content": "fondo clon"}
+{"content": "ultima venta"}
+{"content": "vencimientos escalonados"}
+{"content": "auditor interno"}
+{"content": "impuesto sobre la renta diferido"}
+{"content": "tasa de interés preferencial"}
+{"content": "cuotas de participación"}
+{"content": "adquisición"}
+{"content": "punto porcentual"}
+{"content": "selectividad"}
+{"content": "orden de venta limitada"}
+{"content": "contrato de seguro"}
+{"content": "compra de la participación controlante"}
+{"content": "bono de ahorro"}
+{"content": "acciones con derecho a voto"}
+{"content": "acciones autorizadas"}
+{"content": "negociación"}
+{"content": "ejecutivo de cuenta"}
+{"content": "activo neto realizable"}
+{"content": "ultima entrada primera salida"}
+{"content": "bono shogun"}
+{"content": "compensación bancaria"}
+{"content": "reevaluación"}
+{"content": "ganancias por inversiones"}
+{"content": "anticipo en efectivo"}
+{"content": "toma de ganancias"}
+{"content": "sociedad de bolsa minorista"}
+{"content": "opción sobre commodities"}
+{"content": "emisor"}
+{"content": "colocación negociada"}
+{"content": "cuentas del activo"}
+{"content": "certificado de depósito a tasa flotante"}
+{"content": "socio"}
+{"content": "escisión"}
+{"content": "bono no rescatable"}
+{"content": "deuda pagadera en cuotas"}
+{"content": "deudor"}
+{"content": "deudas a largo plazo"}
+{"content": "documentación del crédito"}
+{"content": "bono de referencia"}
+{"content": "arbitraje de riesgo"}
+{"content": "derecho a voto"}
+{"content": "balance general consolidado"}
+{"content": "panda"}
+{"content": "reglamento interno"}
+{"content": "oficial de cuenta"}
+{"content": "liquidador"}
+{"content": "préstamo sin garantía"}
+{"content": "certificado de depósito superior a 100.000 dólares"}
+{"content": "variables económicas de seguimiento"}
+{"content": "acción nominativa"}
+{"content": "costo efectivo"}
+{"content": "principios contables generalmente aceptados"}
+{"content": "oferente"}
+{"content": "mercado chato"}
+{"content": "lucro"}
+{"content": "orden condicional"}
+{"content": "deudas a mediano plazo"}
+{"content": "criterio que se basa en lo devengado"}
+{"content": "explotación"}
+{"content": "posiciones accionarias permanentes"}
+{"content": "certificado de depósito a largo plazo"}
+{"content": "operador de inversores institucionales"}
+{"content": "cambio"}
+{"content": "curva de rendimiento"}
+{"content": "comisión de salida"}
+{"content": "reserva"}
+{"content": "cobertura cruzada"}
+{"content": "dividendo omitido"}
+{"content": "subir la calificación de un papel"}
+{"content": "retiro"}
+{"content": "activo líquido"}
+{"content": "letra de cambio al portador"}
+{"content": "riesgo de liquidación"}
+{"content": "feudalismo"}
+{"content": "moneda controlada"}
+{"content": "cuenta corriente que devenga intereses"}
+{"content": "presupuesto flexible"}
+{"content": "fuga de capitales"}
+{"content": "clima del mercado"}
+{"content": "bono yankee"}
+{"content": "más intereses"}
+{"content": "primera hipoteca"}
+{"content": "autofinanciación"}
+{"content": "acreedor hipotecario"}
+{"content": "acciones tecnológicas"}
+{"content": "tenencia de valores"}
+{"content": "opción combinada"}
+{"content": "cerrar los libros"}
+{"content": "al portador"}
+{"content": "vencimiento"}
+{"content": "dólares a término"}
+{"content": "report"}
+{"content": "gastos bancarios"}
+{"content": "admistracion publica"}
+{"content": "producto financiero"}
+{"content": "peseta"}
+{"content": "acciones nuevas"}
+{"content": "perito contable"}
+{"content": "cargar cuentas"}
+{"content": "deuda en bonos"}
+{"content": "coeficiente de endeudamiento"}
+{"content": "recursos propios"}
+{"content": "distribucion"}
+{"content": "títulos de deuda del gobierno"}
+{"content": "dinero caro"}
+{"content": "promedio de ingresos"}
+{"content": "operación de contado"}
+{"content": "prelación"}
+{"content": "quiebra fraudulenta"}
+{"content": "diferencia de rendimiento"}
+{"content": "mercado vendido"}
+{"content": "cláusula de rescate"}
+{"content": "deuda revolverte"}
+{"content": "espacio en blanco"}
+{"content": "propiedad industrial"}
+{"content": "sensible a las tasas"}
+{"content": "oferta"}
+{"content": "inflación"}
+{"content": "desempleo"}
+{"content": "entidades publicas"}
+{"content": "banco central"}
+{"content": "curva de rendimiento positiva"}
+{"content": "período de tenencia"}
+{"content": "ejercicio anticipado"}
+{"content": "oficial de cuenta autorizado"}
+{"content": "bono al portador"}
+{"content": "acciones agresivas"}
+{"content": "cuenta activa"}
+{"content": "colocación en firme"}
+{"content": "certificado de acción"}
+{"content": "valuación base"}
+{"content": "saldo acreedor"}
+{"content": "rotación de cartera"}
+{"content": "operador"}
+{"content": "disponibilidad de capital"}
+{"content": "banda de negociación histórica"}
+{"content": "reintegro de aranceles aduaneros"}
+{"content": "gasto reclasificable"}
+{"content": "emisión"}
+{"content": "corredor de lotes incompletos"}
+{"content": "gastos administrativos"}
+{"content": "ingreso imponible"}
+{"content": "presupuesto congelado"}
+{"content": "rentabilidad"}
+{"content": "bienes de capital"}
+{"content": "acciones clase a"}
+{"content": "transferencias vía precios y tarifas"}
+{"content": "acciones clase b"}
+{"content": "préstamo de buena fe"}
+{"content": "salario"}
+{"content": "compulsa de libros"}
+{"content": "bono convertible"}
+{"content": "deudores morosos"}
+{"content": "contrato"}
+{"content": "préstamo lombardo"}
+{"content": "citacion"}
+{"content": "analista financiero"}
+{"content": "valor actual de mercado"}
+{"content": "trust"}
+{"content": "valor de mercado"}
+{"content": "fondo rotatorio"}
+{"content": "factores de competitividad"}
+{"content": "covarianza"}
+{"content": "activos encubiertos"}
+{"content": "inversión de renta fija"}
+{"content": "responsabilidad subsidiaria"}
+{"content": "política monetaria"}
+{"content": "cupón largo"}
+{"content": "cuenta de margen"}
+{"content": "posición corta"}
+{"content": "resumen de cuenta"}
+{"content": "compañía de seguros"}
+{"content": "autorización de cargo"}
+{"content": "posición vendedora"}
+{"content": "tipo de cambio comprador"}
+{"content": "mercado cautivo"}
+{"content": "proveedores"}
+{"content": "análisis de regresión"}
+{"content": "año fiscal"}
+{"content": "apalancamiento operativo"}
+{"content": "prestamos"}
+{"content": "inflación secular"}
+{"content": "bóveda"}
+{"content": "aceptación bancaria"}
+{"content": "orden de compra con precio tope"}
+{"content": "acreedor"}
+{"content": "acciones preferidas"}
+{"content": "alquiler neto"}
+{"content": "devengado"}
+{"content": "trueque"}
+{"content": "grupo de los diez"}
+{"content": "garantía inicial"}
+{"content": "psicologia"}
+{"content": "comisión de cotización"}
+{"content": "bonos no garantizados"}
+{"content": "orden originada dentro del recinto"}
+{"content": "inversiones en activos tangibles"}
+{"content": "declaración de impuestos consolidada"}
+{"content": "orden de pago permanente"}
+{"content": "exterior"}
+{"content": "valor de activos netos"}
+{"content": "masa monetaria"}
+{"content": "especificaciones de la orden"}
+{"content": "valores en cartera"}
+{"content": "excedente de reservas"}
+{"content": "fondo de cobertura"}
+{"content": "arancel discriminatorio"}
+{"content": "compañía financiera"}
+{"content": "subvaluado"}
+{"content": "perito tasador"}
+{"content": "cuota de exportación"}
+{"content": "tasa del cupón"}
+{"content": "plan de cuentas"}
+{"content": "mercado primario"}
+{"content": "política presupuestaria"}
+{"content": "promediar precio por compras regulares"}
+{"content": "pignorar"}
+{"content": "ganancia operativa"}
+{"content": "bienes libres"}
+{"content": "vaciamiento"}
+{"content": "interés simple"}
+{"content": "memoria"}
+{"content": "diferencias de cambio"}
+{"content": "productos elaborados"}
+{"content": "prórroga"}
+{"content": "orden abierta"}
+{"content": "síndico de la quiebra"}
+{"content": "confirmación"}
+{"content": "precio de venta"}
+{"content": "tasa de retorno real"}
+{"content": "titulo valor al portador"}
+{"content": "subasta pública"}
+{"content": "obras publicas"}
+{"content": "entrega a término"}
+{"content": "fianza"}
+{"content": "separar el cupón del bono"}
+{"content": "sin cambios"}
+{"content": "base imponible"}
+{"content": "multiplicador monetario"}
+{"content": "no residentes"}
+{"content": "lanzador de opciones"}
+{"content": "activo libre de riesgo"}
+{"content": "fisiocracia"}
+{"content": "bono en moneda extranjera"}
+{"content": "ganancia neta por acción"}
+{"content": "crédito bancario"}
+{"content": "tasación"}
+{"content": "lista de cotizaciones"}
+{"content": "descuento"}
+{"content": "dictamen con salvedades"}
+{"content": "gastos estimados"}
+{"content": "préstamo a la vista"}
+{"content": "spread"}
+{"content": "acciones de cotización suspendida"}
+{"content": "función de producción"}
+{"content": "fondos de inversión"}
+{"content": "título a tasa flotante con tope máximo de interés"}
+{"content": "interés neto"}
+{"content": "canje de acciones"}
+{"content": "reprivatización"}
+{"content": "orden limitada"}
+{"content": "acción cotizante"}
+{"content": "límite de fluctuación diaria"}
+{"content": "bonos privados"}
+{"content": "familia de fondos"}
+{"content": "capital circulante"}
+{"content": "aforo"}
+{"content": "mercado libre y abierto"}
+{"content": "cantidad de cada especie subyacente"}
+{"content": "comisión de mantenimiento"}
+{"content": "lote impar"}
+{"content": "depósito abierto"}
+{"content": "manual"}
+{"content": "remuneración de asalariados"}
+{"content": "erogaciones"}
+{"content": "resolución"}
+{"content": "ámbito de competencia"}
+{"content": "bono brady"}
+{"content": "vida probable"}
+{"content": "estatuto tributario"}
+{"content": "por debajo del precio de costo"}
+{"content": "huida hacia la calidad"}
+{"content": "autofinanciamiento"}
+{"content": "colocación privada"}
+{"content": "fondo de inversión especializado"}
+{"content": "formador de mercado"}
+{"content": "transferencia de fondos"}
+{"content": "remesas"}
+{"content": "estar comprado"}
+{"content": "bono exento de impuestos"}
+{"content": "compromisos de inversión"}
+{"content": "reservas declaradas"}
+{"content": "certificado estadounidense de depósitos en custodia"}
+{"content": "rotación de capital"}
+{"content": "giro documentado"}
+{"content": "arancel de aduanas"}
+{"content": "contador público nacional"}
+{"content": "licitante"}
+{"content": "pérdida realizada"}
+{"content": "comisión por corretaje"}
+{"content": "alza repentina de precios"}
+{"content": "demanda de acciones"}
+{"content": "acta constitutiva"}
+{"content": "mercado monetario"}
+{"content": "control interno"}
+{"content": "grupo andino"}
+{"content": "coeficiente de caja"}
+{"content": "mercado a término"}
+{"content": "baja de precio"}
+{"content": "título valor escritural"}
+{"content": "marketing"}
+{"content": "bonos de tesoro"}
+{"content": "devaluaciones competitivas"}
+{"content": "estrategia de acumulación"}
+{"content": "sobrecomprado"}
+{"content": "sector industrial"}
+{"content": "anualidad fijada de antemano"}
+{"content": "fuentes de poder"}
+{"content": "día hábil"}
+{"content": "participación minoritaria"}
+{"content": "débito extraordinario"}
+{"content": "participación en el mercado"}
+{"content": "analista técnico"}
+{"content": "mandamiento de pago"}
+{"content": "suma pendiente de pago"}
+{"content": "disponibilidades líquidas"}
+{"content": "ingresos"}
+{"content": "valor libro de la acción"}
+{"content": "costo financiero"}
+{"content": "alza potencial"}
+{"content": "productor de seguros"}
+{"content": "insolvencia"}
+{"content": "costos constantes"}
+{"content": "fondos interbancarios"}
+{"content": "sobresuscripción"}
+{"content": "flujo de caja"}
+{"content": "fecha de la oferta"}
+{"content": "lote incompleto"}
+{"content": "seña"}
+{"content": "recursos disponibles"}
+{"content": "préstamo interbancario"}
+{"content": "mercado volatil"}
+{"content": "descuento por volumen"}
+{"content": "auditoría anual"}
+{"content": "lanzamiento de una opción de compra cubierta"}
+{"content": "hipoteca de primer grado"}
+{"content": "balanza de renta"}
+{"content": "prorrateo"}
+{"content": "alza promedio"}
+{"content": "pérdida trasladable a ejercicios posteriores"}
+{"content": "título valor cotizante"}
+{"content": "poder adquisitivo del dinero"}
+{"content": "fondo monetario internacional"}
+{"content": "lote completo"}
+{"content": "principio de los retornos decrecientes"}
+{"content": "se omite la repetición de precios"}
+{"content": "moratoria"}
+{"content": "deuda no vencida"}
+{"content": "rescatable"}
+{"content": "pérdida trasladable a ejercicios anteriores"}
+{"content": "subsidio"}
+{"content": "reestructuración del capital"}
+{"content": "toma de control"}
+{"content": "ensayo"}
+{"content": "mercado"}
+{"content": "rendimiento descontado"}
+{"content": "dividendo compensatorio"}
+{"content": "precio de ejercicio ajustado por di-videndos"}
+{"content": "bienes sustitutivos"}
+{"content": "gestión de riesgo"}
+{"content": "dividendo extraordinario"}
+{"content": "saldo final"}
+{"content": "renta nacional"}
+{"content": "copropiedad"}
+{"content": "fondo de doble propósito"}
+{"content": "resultado"}
+{"content": "analista de créditos"}
+{"content": "valor residual"}
+{"content": "ciclo económico de las industrias"}
+{"content": "intermediacion financiera"}
+{"content": "balanza de pagos"}
+{"content": "costo irrecuperable"}
+{"content": "fondo común de inversión cerrado"}
+{"content": "diversificación de la liquidez"}
+{"content": "cotización de cierre"}
+{"content": "sede central"}
+{"content": "apertura demorada"}
+{"content": "reservas de capital"}
+{"content": "fondo de amortización"}
+{"content": "acciones preferidas no acumulativas"}
+{"content": "actor"}
+{"content": "sociedad gerente"}
+{"content": "crédito para exportaciones"}
+{"content": "pasivo circulante"}
+{"content": "holding"}
+{"content": "tasa aplicada a adelantos contra garantías"}
+{"content": "precio final sin comisiones"}
+{"content": "cláusula de protección"}
+{"content": "depósito de garantía"}
+{"content": "utilidad"}
+{"content": "costo histórico"}
+{"content": "junta arbitral"}
+{"content": "coeficiente de correlación"}
+{"content": "escala"}
+{"content": "tipo de cambio oficial"}
+{"content": "obligación"}
+{"content": "venta forzosa"}
+{"content": "acción financiada con crédito"}
+{"content": "variable"}
+{"content": "orden de cancelación"}
+{"content": "comité de inversiones"}
+{"content": "cuotapartista"}
+{"content": "acciones"}
+{"content": "contrato de futuros sobre divisas"}
+{"content": "amortización acumulada"}
+{"content": "estancamiento económico"}
+{"content": "activos líquidos"}
+{"content": "contango"}
+{"content": "operación no concretada"}
+{"content": "endosante"}
+{"content": "ganancia imponible"}
+{"content": "inversor de lotes incompletos"}
+{"content": "déficit de recursos"}
+{"content": "requisicion"}
+{"content": "superintendencias"}
+{"content": "precio de la emisión"}
+{"content": "activo corriente"}
+{"content": "estados contables combinados"}
+{"content": "cartera con deuda"}
+{"content": "gastos directos"}
+{"content": "acciones restringidas al público"}
+{"content": "aval bancario"}
+{"content": "orden de retiro negociable"}
+{"content": "marca registrada"}
+{"content": "relación real de intercambio"}
+{"content": "certificado de participación"}
+{"content": "cesión"}
+{"content": "mercado de compradores"}
+{"content": "penalidad por salida anticipada"}
+{"content": "arrendamiento a largo plazo"}
+{"content": "fluctuación máxima de precios"}
+{"content": "comunidad"}
+{"content": "casa matriz"}
+{"content": "póliza de seguro"}
+{"content": "autocartera"}
+{"content": "opción cotizante"}
+{"content": "derecho exclusivo de emitir billetes"}
+{"content": "arbitrajista"}
+{"content": "deflación"}
+{"content": "ganancias ordinarias"}
+{"content": "bienes durables"}
+{"content": "meta de produccion"}
+{"content": "depósitos a la vista"}
+{"content": "renta fija"}
+{"content": "economia politica"}
+{"content": "acreedor privilegiado"}
+{"content": "crédito fiscal a las inversiones"}
+{"content": "tasas de interés flotante"}
+{"content": "participación mayoritaria"}
+{"content": "minuta"}
+{"content": "inversión por valor"}
+{"content": "bienes de consumo masivo"}
+{"content": "intereses pendientes de pago"}
+{"content": "compañía subsidiaria"}
+{"content": "cotización nominal"}
+{"content": "encargo fiduciario"}
+{"content": "bono respaldado por equipos"}
+{"content": "valor de conversión"}
+{"content": "bonos del gobierno"}
+{"content": "factor secundario"}
+{"content": "ley de ingresos"}
+{"content": "empresa editorial"}
+{"content": "valor unitario de la cuotaparte"}
+{"content": "discreto"}
+{"content": "acción de dividendos elevados"}
+{"content": "punto de equilibrio"}
+{"content": "demanda no elástica"}
+{"content": "capitalismo"}
+{"content": "cupón"}
+{"content": "precio justificado"}
+{"content": "costo estimado"}
+{"content": "fondo de inversión cerrado"}
+{"content": "línea de crédito bancaria"}
+{"content": "operación de canje"}
+{"content": "cupón semestral"}
+{"content": "mercado cambiario"}
+{"content": "cotización mínima"}
+{"content": "endoso no a la orden"}
+{"content": "mercado secundario de hipotecas"}
+{"content": "atesoramiento"}
+{"content": "operación de cierre"}
+{"content": "interposición"}
+{"content": "corrida bancaria"}
+{"content": "institución sin fines de lucro"}
+{"content": "recta del mercado de capitales"}
+{"content": "escala de precios"}
+{"content": "moratoria de la deuda"}
+{"content": "especulación"}
+{"content": "riesgo-país"}
+{"content": "colón"}
+{"content": "liquidar posiciones"}
+{"content": "sin dividendo"}
+{"content": "fondo de acciones ordinarias"}
+{"content": "análisis cualitativo"}
+{"content": "porción conyugal"}
+{"content": "bono rembrandt"}
+{"content": "derecho preferente de suscripción"}
+{"content": "regla del"}
+{"content": "bien incorporal"}
+{"content": "recursos humanos"}
+{"content": "expectativas otorgadas"}
+{"content": "promedio variable"}
+{"content": "plan de pagos periódicos"}
+{"content": "fecha de pago"}
+{"content": "valor actual"}
+{"content": "obligación hipotecaria"}
+{"content": "servicios estandarizados"}
+{"content": "alza de cotizaciones"}
+{"content": "bono ajustable"}
+{"content": "agente bursátil accionista de la bolsa"}
+{"content": "hipoteca de tasa flotante"}
+{"content": "tipo de cambio flotante"}
+{"content": "bono no garantizado"}
+{"content": "banco multinacional"}
+{"content": "franco"}
+{"content": "orden a precio cierto"}
+{"content": "precio de oferta"}
+{"content": "aval financiero"}
+{"content": "donación"}
+{"content": "acción ilíquida"}
+{"content": "retorno nominal"}
+{"content": "crédito"}
+{"content": "asientos de ajuste"}
+{"content": "mercado de capitales"}
+{"content": "grupo empresarial"}
+{"content": "crédito con garantía especial"}
+{"content": "acciones con opciones vigentes"}
+{"content": "acreedores"}
+{"content": "cláusula de penalización"}
+{"content": "acciones emitidas y en circulación"}
+{"content": "eurodólar"}
+{"content": "comisión compartida"}
+{"content": "pago anual"}
+{"content": "crecimiento equilibrado"}
+{"content": "beneficio"}
+{"content": "exceso de demanda"}
+{"content": "acciones en caución"}
+{"content": "inscripción"}
+{"content": "clearing de títulos"}
+{"content": "aviso de reintegro"}
+{"content": "construcción de carteras"}
+{"content": "analisis financiero"}
+{"content": "coeficiente rho"}
+{"content": "derechos de los socios minoritarios"}
+{"content": "corredor de seguros"}
+{"content": "compañía inactiva"}
+{"content": "sistema monetario"}
+{"content": "dinero ocioso"}
+{"content": "cuantificación en términos monetarios"}
+{"content": "sociedad en comandita por acciones"}
+{"content": "alza técnica"}
+{"content": "oligopolio"}
+{"content": "factoría"}
+{"content": "persona vinculada a la empresa"}
+{"content": "comprar al cierre de la rueda"}
+{"content": "acciones revoleadas"}
+{"content": "demanda agregada"}
+{"content": "directorio"}
+{"content": "tipo de cambio al cierre del ejercicio"}
+{"content": "banco internacional de pagos"}
+{"content": "subyacente"}
+{"content": "banco nacional"}
+{"content": "ganancias por acción"}
+{"content": "factoraje"}
+{"content": "gastos"}
+{"content": "calificación provisoria"}
+{"content": "mercado de bonos yankee"}
+{"content": "programa de recompra de acciones"}
+{"content": "gourde"}
+{"content": "oficina del operador bursátil"}
+{"content": "riesgo de precio"}
+{"content": "criterios"}
+{"content": "colocar"}
+{"content": "valor patrimonial"}
+{"content": "acción cambiaria"}
+{"content": "inmueble"}
+{"content": "deben ture"}
+{"content": "reserva estatutaria"}
+{"content": "liquidar activos"}
+{"content": "ajuste por inflación"}
+{"content": "cartera representativa del mercado"}
+{"content": "privilegio de traspaso"}
+{"content": "capitalización bursátil"}
+{"content": "recargos por mora"}
+{"content": "hipoteca de tasa variable"}
+{"content": "libre de gastos"}
+{"content": "precio de la última operación"}
+{"content": "bono con opción de reventa"}
+{"content": "costeo absorbente"}
+{"content": "tendencia bajista"}
+{"content": "estado de cuenta bursátil"}
+{"content": "emisión de gran demanda"}
+{"content": "distribución normal de probabilidades"}
+{"content": "estrategia contra adquisiciones hostiles"}
+{"content": "sociedad gerente inscripta"}
+{"content": "sinergia"}
+{"content": "gerente de cartera"}
+{"content": "bonos de maduraciones escalonadas"}
+{"content": "acciones ordinarias"}
+{"content": "agente pagador"}
+{"content": "mercado débil"}
+{"content": "sector primario"}
+{"content": "departamento de relaciones con inversores"}
+{"content": "préstamo hipotecario"}
+{"content": "rescindir"}
+{"content": "valor neto contable"}
+{"content": "agente bursátil independiente"}
+{"content": "activos totales"}
+{"content": "mercado interno"}
+{"content": "rescate opcional"}
+{"content": "fondo de bonos municipales"}
+{"content": "ciencia política"}
+{"content": "carta poder"}
+{"content": "daño emergente"}
+{"content": "superar el rendimiento de los índices"}
+{"content": "coaching"}
+{"content": "cifras comparativas"}
+{"content": "interés sobre intereses"}
+{"content": "valor futuro"}
+{"content": "controles de cambio"}
+{"content": "sociedad cooperativa"}
+{"content": "desinflacion"}
+{"content": "acreedor común"}
+{"content": "manejo de carteras"}
+{"content": "balance general comparativo"}
+{"content": "operación de arbitraje"}
+{"content": "recargo por lote impar"}
+{"content": "desequilibrio de órdenes"}
+{"content": "agente colocador de una emisión"}
+{"content": "mercadotecnia verde"}
+{"content": "rendimiento posterior al pago de impuestos"}
+{"content": "cargas impositivas"}
+{"content": "prestatario"}
+{"content": "mercado bursátil"}
+{"content": "captación"}
+{"content": "calificación de bonos"}
+{"content": "recesión"}
+{"content": "posición abierta"}
+{"content": "productos básicos"}
+{"content": "cuenta consolidada"}
+{"content": "industria manufacturera"}
+{"content": "escasez de dinero"}
+{"content": "límite de préstamo"}
+{"content": "ganancias de capital"}
+{"content": "fondo de inversión de comisiones bajas"}
+{"content": "a la vista"}
+{"content": "unidad de negociación"}
+{"content": "prima de rescate"}
+{"content": "papel no cotizante"}
+{"content": "cuando sea emitido"}
+{"content": "transferencias explicitas"}
+{"content": "funcion coob-douglas"}
+{"content": "inversor institucional"}
+{"content": "billete de curso legal"}
+{"content": "tasa de crecimiento compuesta"}
+{"content": "cancelación de una orden (luego de su ejecución)"}
+{"content": "política de mercado abierto"}
+{"content": "concordato extrajudicial con los acreedores"}
+{"content": "consejo de asesores económicos"}
+{"content": "cotización"}
+{"content": "reservas ocultas"}
+{"content": "reactivación económica"}
+{"content": "regionalizacion"}
+{"content": "financiamiento permanente"}
+{"content": "activo circulante"}
+{"content": "udibono"}
+{"content": "totalmente invertido"}
+{"content": "departamento"}
+{"content": "cuenta conjunta con acreditación al sobreviviente"}
+{"content": "pauta del 10%"}
+{"content": "caída"}
+{"content": "tipo de cambio de cierre"}
+{"content": "compañía local"}
+{"content": "costo de reposición"}
+{"content": "conversión de divisas"}
+{"content": "tenedor registrado"}
+{"content": "activo fijo"}
+{"content": "orden de inversión"}
+{"content": "opción cubierta"}
+{"content": "bono prorrogable"}
+{"content": "deuda"}
+{"content": "asamblea general de accionistas"}
+{"content": "registrar"}
+{"content": "socio solidario"}
+{"content": "extracción"}
+{"content": "amparo"}
+{"content": "hipoteca"}
+{"content": "mediano plazo"}
+{"content": "ajuste de dividendos"}
+{"content": "precio de adquisición"}
+{"content": "créditos en mora"}
+{"content": "capital integrado"}
+{"content": "cifra de control"}
+{"content": "certificado de depósito en eurodólares"}
+{"content": "análisis por gráficos"}
+{"content": "tipo de cambio libre"}
+{"content": "titular de la cuenta"}
+{"content": "fecha efectiva"}
+{"content": "capacitacion"}
+{"content": "rescate"}
+{"content": "inventario final"}
+{"content": "período de base"}
+{"content": "bono largo"}
+{"content": "alcista"}
+{"content": "riesgo"}
+{"content": "requisitos para cotizar en bolsa"}
+{"content": "bienes fungibles"}
+{"content": "normas éticas"}
+{"content": "comisión por manejo de carteras"}
+{"content": "gastos fijos"}
+{"content": "recibo de depósito"}
+{"content": "interés"}
+{"content": "nota de garantía"}
+{"content": "bono respaldado por impuestos especiales"}
+{"content": "fondo de comercio"}
+{"content": "acciones preferenciales"}
+{"content": "riesgo compañía"}
+{"content": "pasivo contingente"}
+{"content": "poder adquisitivo"}
+{"content": "recinto de operaciones"}
+{"content": "factura"}
+{"content": "banco custodio"}
+{"content": "consumo del gobierno"}
+{"content": "tasa de interés base"}
+{"content": "presupuesto modificado"}
+{"content": "etapa de estabilización"}
+{"content": "patrimonio neto"}
+{"content": "acción ordinaria"}
+{"content": "licitación pública"}
+{"content": "bono de doble divisa"}
+{"content": "bancario"}
+{"content": "sin calificación"}
+{"content": "valor nominal"}
+{"content": "crack bursátil"}
+{"content": "socio oculto"}
+{"content": "cuasidinero"}
+{"content": "activos tangibles"}
+{"content": "comisión de venta"}
+{"content": "intereses atrasados"}
+{"content": "plata negra"}
+{"content": "bono extranjero"}
+{"content": "cuenta mixta"}
+{"content": "consignatario"}
+{"content": "acción nominativa no endosable"}
+{"content": "actualización del valor de los activos"}
+{"content": "interés negativo"}
+{"content": "descuento por pago en efectivo"}
+{"content": "forma de pago"}
+{"content": "emisión actual"}
+{"content": "franquicias"}
+{"content": "obligado"}
+{"content": "euronotas"}
+{"content": "cartera de valores"}
+{"content": "caución"}
+{"content": "negociación ficticia"}
+{"content": "intermediación financiera"}
+{"content": "mercado de operaciones al mejor postor"}
+{"content": "dinero especulativo"}
+{"content": "bonos del tesoro británico"}
+{"content": "contraprestación"}
+{"content": "lanzamiento de una opción de compra descubierta"}
+{"content": "mercado activo"}
+{"content": "bono de consolidación de deudas"}
+{"content": "tendencia"}
+{"content": "precio mayorista"}
+{"content": "inmunización pasiva"}
+{"content": "panel de cotizaciones"}
+{"content": "oferta en circulación"}
+{"content": "flujo de fondos negativo"}
+{"content": "pérdida operativa neta"}
+{"content": "delta"}
+{"content": "cobro"}
+{"content": "institución fiduciaria"}
+{"content": "reservas disponibles"}
+{"content": "activo físico"}
+{"content": "equivalencia de rendimiento"}
+{"content": "tasa de referencia"}
+{"content": "activos de la quiebra"}
+{"content": "préstamo"}
+{"content": "paridad oro"}
+{"content": "fusión por absorción"}
+{"content": "libra esterlina"}
+{"content": "ganancia antes de impuestos"}
+{"content": "precio de rescate"}
+{"content": "estructura del balance"}
+{"content": "título de deuda"}
+{"content": "costo marginal"}
+{"content": "divisa"}
+{"content": "valor esperado"}
+{"content": "negociación de papeles no cotizantes"}
+{"content": "acción común"}
+{"content": "embargo de créditos"}
+{"content": "reservas no distribuibles"}
+{"content": "subasta con sistema holandés"}
+{"content": "aceptación condicional"}
+{"content": "flujo de efectivo"}
+{"content": "letra del tesoro"}
+{"content": "participación accionaria"}
+{"content": "por debajo de la tasa del mercado"}
+{"content": "precio base"}
+{"content": "monopolio"}
+{"content": "grupo economico"}
+{"content": "impuesto de timbre"}
+{"content": "inflación de oferta"}
+{"content": "prima"}
+{"content": "acciones emitidas a valor inflado"}
+{"content": "desvío estándar"}
+{"content": "gráfico"}
+{"content": "aptitud"}
+{"content": "estructura financiera"}
+{"content": "reclutamiento"}
+{"content": "tasa interbancaria"}
+{"content": "apalancamiento financiero"}
+{"content": "participación en el capital"}
+{"content": "déficit"}
+{"content": "asesor financiero autorizado"}
+{"content": "inflación de demanda"}
+{"content": "fondo de rescate"}
+{"content": "precio spot"}
+{"content": "mercaderías"}
+{"content": "corro"}
+{"content": "desinversión"}
+{"content": "declaración impositiva con información falsa"}
+{"content": "libro auxiliar"}
+{"content": "período de espera"}
+{"content": "certeza"}
+{"content": "empresa de servicios"}
+{"content": "bono ilíquido"}
+{"content": "comprobante"}
+{"content": "vencimiento original"}
+{"content": "aviso"}
+{"content": "banda de precios"}
+{"content": "obligaciones negociables de primera línea"}
+{"content": "destreza"}
+{"content": "dinero"}
+{"content": "ganancia de capital"}
+{"content": "punto"}
+{"content": "liberados"}
+{"content": "retención"}
+{"content": "capital donado"}
+{"content": "conversión forzosa"}
+{"content": "saldo inicial"}
+{"content": "resultados no asignados"}
+{"content": "balanza comercial favorable"}
+{"content": "coyuntura económica"}
+{"content": "achicar el margen"}
+{"content": "controles sobre la exportación"}
+{"content": "orden en firme"}
+{"content": "prorrata"}
+{"content": "fuerza mayor"}
+{"content": "política de ingresos"}
+{"content": "activos reales"}
+{"content": "costos de producción"}
+{"content": "costo promedio ponderado"}
+{"content": "garantía"}
+{"content": "venta de una subsidiaria"}
+{"content": "valor tiempo"}
+{"content": "deudas diferidas"}
+{"content": "compra apalancada"}
+{"content": "título valor subordinado"}
+{"content": "límite de ejercicios"}
+{"content": "ruido"}
+{"content": "operación que abre una posición nueva"}
+{"content": "traspasos de recursos presupuestarios"}
+{"content": "clearing bancario"}
+{"content": "aversión al riesgo"}
+{"content": "desintermediación"}
+{"content": "retencion"}
+{"content": "título sintético"}
+{"content": "brecha"}
+{"content": "prensa financiera"}
+{"content": "moneda artificial"}
+{"content": "fijar paridad de cambio libre"}
+{"content": "bono del gobierno alemán"}
+{"content": "globalización"}
+{"content": "recursos para inversión"}
+{"content": "venta al contado"}
+{"content": "recomendación general"}
+{"content": "balanza comercial"}
+{"content": "coeficiente de insumo-producto"}
+{"content": "contrato de compraventa"}
+{"content": "bono bulldog"}
+{"content": "unidad de cuenta"}
+{"content": "sociedad de economía mixta"}
+{"content": "aceleración principio de"}
+{"content": "margen inicial"}
+{"content": "administrar"}
+{"content": "persona moral"}
+{"content": "conocimiento de embarque con reservas"}
+{"content": "préstamo de títulos valores"}
+{"content": "valor"}
+{"content": "apreciación de una acción"}
+{"content": "pass-through"}
+{"content": "capital de trabajo"}
+{"content": "bolívar"}
+{"content": "dígitos omitidos"}
+{"content": "riesgo eventual"}
+{"content": "entrega demorada"}
+{"content": "prenda"}
+{"content": "margen"}
+{"content": "rueda"}
+{"content": "valor del fondo de comercio"}
+{"content": "oferta pública"}
+{"content": "prima por riesgo de incumplimiento"}
+{"content": "corona (moneda nacional de la república checa)"}
+{"content": "escritura de  hipoteca"}
+{"content": "prospecto preliminar"}
+{"content": "con derechos de suscripción"}
+{"content": "anualizar"}
+{"content": "aumento neto de la deuda"}
+{"content": "incentivos fiscales"}
+{"content": "serie de opciones"}
+{"content": "oferta especial"}
+{"content": "orden de swap"}
+{"content": "articulo"}
+{"content": "tasa actual de mercado"}
+{"content": "girador"}
+{"content": "reposición de margen"}
+{"content": "control de calidad"}
+{"content": "opción de compra"}
+{"content": "prestación de servicios"}
+{"content": "título valor sobrevaluado"}
+{"content": "indicador"}
+{"content": "letra pagadera a plazo"}
+{"content": "bajo la par"}
+{"content": "consumidor"}
+{"content": "acciones no ofrecidas en oferta pública"}
+{"content": "letra de favor"}
+{"content": "inflación de costo"}
+{"content": "manipulación"}
+{"content": "accionista minoritario"}
+{"content": "intereses de la deuda"}
+{"content": "riesgo imprevisto"}
+{"content": "dividendo por acción"}
+{"content": "costo de mercaderías vendidas"}
+{"content": "refinanciamiento"}
+{"content": "ingreso fiscal"}
+{"content": "riesgo financiero"}
+{"content": "distribución secundaria"}
+{"content": "saldo"}
+{"content": "arbitraje con índices"}
+{"content": "volátil"}
+{"content": "a cuenta"}
+{"content": "registros contables"}
+{"content": "bono respaldado por commod-ities"}
+{"content": "estatal"}
+{"content": "distribución de ganancias"}
+{"content": "alternativa\t ambiente"}
+{"content": "reacción"}
+{"content": "costo"}
+{"content": "mercado favorable al comprador"}
+{"content": "recinto bursátil"}
+{"content": "capacidad de pago"}
+{"content": "amortizar"}
+{"content": "suplemento de prima"}
+{"content": "apalancamiento defensivo"}
+{"content": "sistema de la reserva federal"}
+{"content": "tasa impositiva"}
+{"content": "dictamen del auditor"}
+{"content": "obligación de rendir cuentas"}
+{"content": "guaraní"}
+{"content": "variables económicas"}
+{"content": "deudas de corto plazo"}
+{"content": "valor mínimo"}
+{"content": "ultima cuota"}
+{"content": "solvencia"}
+{"content": "bloque"}
+{"content": "estanflación"}
+{"content": "mercado invertido"}
+{"content": "investigación y desarrollo"}
+{"content": "balanza cambiaria"}
+{"content": "tasa de retorno mínima"}
+{"content": "orden con límite aproximado"}
+{"content": "cuenta bloqueada"}
+{"content": "con warrants"}
+{"content": "rendimiento esperado hasta el rescate"}
+{"content": "dividendo acumulativo"}
+{"content": "relación precio/flujo de fondos"}
+{"content": "intercambio de bonos"}
+{"content": "asignación de activos"}
+{"content": "pago por adelantado"}
+{"content": "legislación antimonopólica"}
+{"content": "estado de cambios"}
+{"content": "tasa de inflación"}
+{"content": "corte de cupón"}
+{"content": "cotización en varios mercados"}
+{"content": "tenedor"}
+{"content": "infraestructura económica"}
+{"content": "desembolso"}
+{"content": "tasa de interés para depósitos"}
+{"content": "subsidiaria totalmente propia"}
+{"content": "no convertible"}
+{"content": "costo beneficio"}
+{"content": "relación precio/ventas"}
+{"content": "club de parís"}
+{"content": "pasivo real"}
+{"content": "finanzas"}
+{"content": "rendimiento neto"}
+{"content": "nacionalización"}
+{"content": "buscar mercado"}
+{"content": "derivado financiero"}
+{"content": "consultar"}
+{"content": "costos indirectos"}
+{"content": "cartera con préstamo"}
+{"content": "comprar a margen"}
+{"content": "administrador"}
+{"content": "riesgo soberano"}
+{"content": "retrabajo"}
+{"content": "curva de rendimiento invertida"}
+{"content": "título valor inscripto"}
+{"content": "producto bruto interno"}
+{"content": "bienes sustitutos"}
+{"content": "precio de contado"}
+{"content": "relación de conversión"}
+{"content": "estado de resultados"}
+{"content": "déficit o superávit operacional"}
+{"content": "aterrizaje suave"}
+{"content": "saldo deudor"}
+{"content": "costo de colocación de una emisión nueva"}
+{"content": "teoría de la paridad del poder adquisitivo"}
+{"content": "condiciones de venta"}
+{"content": "presupuesto equilibrado"}
+{"content": "asamblea general extraordinaria"}
+{"content": "moneda débil"}
+{"content": "colocación directa"}
+{"content": "credito"}
+{"content": "optimo"}
+{"content": "cuarto mercado"}
+{"content": "rendimiento hasta el rescate anticipado"}
+{"content": "excedente del productor"}
+{"content": "precio de conversión"}
+{"content": "subasta"}
+{"content": "mercado bajista"}
+{"content": "análisis técnico"}
+{"content": "comfort letter"}
+{"content": "garante"}
+{"content": "proyecto de inversión"}
+{"content": "al mejor precio"}
+{"content": "valores no cotizantes"}
+{"content": "intereses vencidos"}
+{"content": "subvención del estado"}
+{"content": "cadena de mando"}
+{"content": "mercado chico"}
+{"content": "redescuento"}
+{"content": "reserva federal"}
+{"content": "señal técnica"}
+{"content": "empresa"}
+{"content": "presidente del directorio"}
+{"content": "condiciones de pago"}
+{"content": "banca off-shore"}
+{"content": "instrumento"}
+{"content": "reajuste del vencimiento de la deuda"}
+{"content": "anualidad variable"}
+{"content": "cierre de la rueda bursátil"}
+{"content": "balanza en la cuenta de capital"}
+{"content": "base de datos"}
+{"content": "sociedad sin cotización oficial"}
+{"content": "mercado abierto"}
+{"content": "activo financiero"}
+{"content": "operaciones automáticas"}
+{"content": "fondos a cobrar"}
+{"content": "tasa call"}
+{"content": "orden de venta con precio tope"}
+{"content": "logica"}
+{"content": "neoliberalismo"}
+{"content": "acción cíclica"}
+{"content": "competitividad"}
+{"content": "gastos financieros"}
+{"content": "gratificación"}
+{"content": "tiempo de validez de una opción"}
+{"content": "orden a precio de apertura"}
+{"content": "caída leve"}
+{"content": "ejecutar una orden completa"}
+{"content": "fideicomiso irrevocable"}
+{"content": "coeficiente de gini"}
+{"content": "oferta pública secundaria"}
+{"content": "límite de fluctuación"}
+{"content": "competencia perfecta"}
+{"content": "concordados"}
+{"content": "fondo común de inversión abierto"}
+{"content": "bienes intermedios"}
+{"content": "moneda devaluada"}
+{"content": "interes simple"}
+{"content": "llamado de reposición de margen"}
+{"content": "mercado manipulado"}
+{"content": "cartera de acciones"}
+{"content": "juicio concursal"}
+{"content": "subdesarrollo"}
+{"content": "incremento de capital"}
+{"content": "reposición de existencias"}
+{"content": "capital subscripto"}
+{"content": "codigo"}
+{"content": "corte de cupón y su venta individual"}
+{"content": "inversión extranjera directa (ied)"}
+{"content": "costo real"}
+{"content": "fondo de alto riesgo"}
+{"content": "bonos de alto rendimiento"}
+{"content": "no incluido en el resultado del ejercicio"}
+{"content": "fondo sin comisión de entrada"}
+{"content": "rendimiento histórico"}
+{"content": "operación"}
+{"content": "bono nominativo"}
+{"content": "interés fijo"}
+{"content": "mercado angosto"}
+{"content": "adaptabilidad"}
+{"content": "pasar a pérdida"}
+{"content": "junta monetaria"}
+{"content": "crédito stand-by"}
+{"content": "riesgo sobre la tasa de interés"}
+{"content": "valor libro"}
+{"content": "préstamo sindicado"}
+{"content": "cupón de bono"}
+{"content": "balance abreviado del grupo"}
+{"content": "colocación a comisión"}
+{"content": "centralizacion"}
+{"content": "sustitución de importaciones"}
+{"content": "renta vitalicia combinada"}
+{"content": "opción asiática"}
+{"content": "partición accionaria"}
+{"content": "débito"}
+{"content": "retorno sobre la inversión"}
+{"content": "depresión"}
+{"content": "commodity físico"}
+{"content": "bajista"}
+{"content": "tasa de interés para fondos federales"}
+{"content": "solidaria"}
+{"content": "bienes de cambio"}
+{"content": "certificado de depósito (cd)"}
+{"content": "bienes de uso"}
+{"content": "cheque rechazado"}
+{"content": "norma iso-9000"}
+{"content": "déficit o superávit"}
+{"content": "tesoreria"}
+{"content": "operador de la punta contraria"}
+{"content": "pierna larga"}
+{"content": "valor económico"}
+{"content": "moneda"}
+{"content": "títulos respaldados por hipotecas"}
+{"content": "valor de liquidación"}
+{"content": "instrumento derivado"}
+{"content": "bono garantizado"}
+{"content": "acciones preferidas de dividendo acumulativo"}
+{"content": "precio de negociación"}
+{"content": "beneficiario"}
+{"content": "ganancia bruta"}
+{"content": "ingresos personales"}
+{"content": "vender en subasta"}
+{"content": "rehabilitación del fallido"}
+{"content": "pérdida previstas"}
+{"content": "cartera"}
+{"content": "título valor no cotizante"}
+{"content": "acciones de muy alto crecimiento"}
+{"content": "estructura"}
+{"content": "calificación de acciones"}
+{"content": "alquiler con opción a compra"}
+{"content": "límite de posiciones abiertas"}
+{"content": "bono par"}
+{"content": "ventas en bloque"}
+{"content": "operación a crédito"}
+{"content": "mercado nacional"}
+{"content": "comenzar a cotizar en bolsa"}
+{"content": "situación económica"}
+{"content": "emisión de bonos"}
+{"content": "futuros financieros"}
+{"content": "presupuesto"}
+{"content": "acreedor garantizado por una cau ción"}
+{"content": "operaciones en el exterior"}
+{"content": "interés sobre 360 días"}
+{"content": "reversión"}
+{"content": "precio de recompra"}
+{"content": "acuerdo general de aranceles y comercio"}
+{"content": "fondo de inversión"}
+{"content": "rebaja"}
+{"content": "vuelco favorable"}
+{"content": "gastos acumulados"}
+{"content": "fondo cerrado"}
+{"content": "criterio del mayor esfuerzo"}
+{"content": "bolsa regional"}
+{"content": "bono de cupón cero"}
+{"content": "sin fondos"}
+{"content": "sobrerreacción (del tipo de cambio)"}
+{"content": "crear mercado"}
+{"content": "bono con categoría de investment grade"}
+{"content": "certificación de firma"}
+{"content": "tipos de interés"}
+{"content": "requisitos de capital"}
+{"content": "derecho de rescate"}
+{"content": "libro mayor"}
+{"content": "acto de comercio"}
+{"content": "recompra de acciones"}
+{"content": "organismo descentralizado"}
+{"content": "deflacion"}
+{"content": "dividendo de acciones preferidas"}
+{"content": "lista de papeles más negociados"}
+{"content": "deuda pública"}
+{"content": "residuo"}
+{"content": "pago de la deuda"}
+{"content": "entrega"}
+{"content": "línea de crédito"}
+{"content": "turbulencia"}
+{"content": "privilegio de compra en una suscripción"}
+{"content": "exportar"}
+{"content": "sociedad colectiva"}
+{"content": "licenciante"}
+{"content": "contabilidad"}
+{"content": "posiciones"}
+{"content": "ganancias después de impuestos"}
+{"content": "contabilidad gubernamental"}
+{"content": "deuda en obligaciones"}
+{"content": "dicotomía"}
+{"content": "punto de referencia"}
+{"content": "pago contra presentación del cupón"}
+{"content": "acciones liberadas"}
+{"content": "creador de mercado"}
+{"content": "sin derechos de suscripción"}
+{"content": "sistema acelerado de recuperación de costos"}
+{"content": "agentes economicos"}
+{"content": "conversión de bonos"}
+{"content": "custodia de valores"}
+{"content": "alquiler"}
+{"content": "título de deuda de interés fijo"}
+{"content": "varianza"}
+{"content": "activo subyacente"}
+{"content": "abrogar"}
+{"content": "acrecentamiento"}
+{"content": "perdedor"}
+{"content": "orden originada fuera del recinto"}
+{"content": "trabajador"}
+{"content": "especulador"}
+{"content": "promediar a la baja"}
+{"content": "títulos valores respaldados por activos"}
+{"content": "tasa flotante"}
+{"content": "texto"}
+{"content": "estacionalidad"}
+{"content": "operación con divisas a plazo"}
+{"content": "equivalentes de acciones ordinarias"}
+{"content": "seguimiento del ticker"}
+{"content": "inflar los precios"}
+{"content": "locación"}
+{"content": "dividendo de capital"}
+{"content": "saldo deudor ajustado"}
+{"content": "agregados económicos"}
+{"content": "comité auditor"}
+{"content": "reaseguro"}
+{"content": "objetivo"}
+{"content": "liquidación al contado"}
+{"content": "capitalización total"}
+{"content": "rentabilidad operativa"}
+{"content": "cargas financieras"}
+{"content": "venta de una pierna"}
+{"content": "puesto del especialista"}
+{"content": "apertura"}
+{"content": "cierre de ejercicio"}
+{"content": "cartera modelo"}
+{"content": "arbitraje de cambio"}
+{"content": "flujo de ganancias"}
+{"content": "compañía apalancada"}
+{"content": "relación deuda-capital"}
+{"content": "comisión del intermediario"}
+{"content": "sociedad anónima"}
+{"content": "rendimiento hasta su vencimiento"}
+{"content": "reconocimiento de deuda"}
+{"content": "cupo de exportación"}
+{"content": "letra de cambio"}
+{"content": "superar una oferta"}
+{"content": "precio de liquidación"}
+{"content": "banco hipotecario"}
+{"content": "rupia  (moneda de india maldivas mauricio nepal seychelles y sri lanka)"}
+{"content": "sobre la par"}
+{"content": "curva de laffer"}
+{"content": "banco de la reserva federal"}
+{"content": "tasa de retorno"}
+{"content": "pagos atrasados"}
+{"content": "cargo adicional por lotes impares"}
+{"content": "cinta de reporte de operaciones"}
+{"content": "casa de bolsa minorista"}
+{"content": "antes de deducir impuestos"}
+{"content": "información económica"}
+{"content": "ajuste del precio de ejercicio por dividendos"}
+{"content": "crédito blando"}
+{"content": "dividendo a cuenta"}
+{"content": "cartera sensible a un solo factor"}
+{"content": "cuentas por pagar"}
+{"content": "hecho revelador del estado de cesación de pagos"}
+{"content": "orden limitada con precio tope"}
+{"content": "coberturista"}
+{"content": "aladi"}
+{"content": "compañías hermanas"}
+{"content": "anualidad de pago inmediato"}
+{"content": "compañía extranjera"}
+{"content": "estados financieros consolidados"}
+{"content": "nuevo sol"}
+{"content": "bono activo"}
+{"content": "mercado de opciones"}
+{"content": "cuenta de ahorros"}
+{"content": "títulos hipotecarios"}
+{"content": "modelo con crecimiento nulo"}
+{"content": "florín holandés"}
+{"content": "dirham"}
+{"content": "prueba acida"}
+{"content": "descuento por reinversión"}
+{"content": "monopolio legal"}
+{"content": "análisis cuantitativo"}
+{"content": "concentracion"}
+{"content": "precio límite"}
+{"content": "fodward"}
+{"content": "volumen negociado"}
+{"content": "transacción al contado inmediato"}
+{"content": "rupia"}
+{"content": "principios contables"}
+{"content": "papel"}
+{"content": "préstamo garantizado por hipoteca de segundo grado"}
+{"content": "administración"}
+{"content": "dividendo diferido"}
+{"content": "líder de la emisión"}
+{"content": "precio de cierre"}
+{"content": "acciones del sector energía"}
+{"content": "valor tiempo del dinero"}
+{"content": "compañía que recién inicia sus operaciones"}
+{"content": "fecha de cierre"}
+{"content": "libra"}
+{"content": "capital neto requerido"}
+{"content": "orden de ejecución inmediata"}
+{"content": "pequeños inversores"}
+{"content": "depósito"}
+{"content": "bajar de calificación"}
+{"content": "pérdida de capital"}
+{"content": "burbuja especulativa"}
+{"content": "fallido"}
+{"content": "club de inversores"}
+{"content": "margen disponible"}
+{"content": "guerra teoría de la"}
+{"content": "operaciones de mercado abierto"}
+{"content": "dividendo en efectivo"}
+{"content": "fondo de inversión internacional"}
+{"content": "déficit comercial"}
+{"content": "ajuste al mercado"}
+{"content": "proposito"}
+{"content": "patrón monetario"}
+{"content": "anualidad vitalicia"}
+{"content": "almacenes fiscales"}
+{"content": "sobrevendido"}
+{"content": "letra de cambio a la vista"}
+{"content": "a corto plazo"}
+{"content": "patrón oro"}
+{"content": "contabilidad a costo de reposición"}
+{"content": "recuperación económica"}
+{"content": "picos ascendentes"}
+{"content": "contingencia"}
+{"content": "tasa de interés variable"}
+{"content": "acuerdo de recompra abierto"}
+{"content": "liquidación"}
+{"content": "frontera eficiente"}
+{"content": "entorno"}
+{"content": "tercer mercado"}
+{"content": "cartera óptima"}
+{"content": "cesantía"}
+{"content": "rescate de bonos"}
+{"content": "cheque incobrable"}
+{"content": "teoría de la valoración del arbitraje"}
+{"content": "rendimiento"}
+{"content": "costos operativos"}
+{"content": "ganancias no devengadas"}
+{"content": "adquisición de defensa"}
+{"content": "multiplicador"}
+{"content": "finiquito"}
+{"content": "gastos de cobranza"}
+{"content": "cuenta con sobremargen"}
+{"content": "ejercicio económico"}
+{"content": "retorno superior al mercado"}
+{"content": "precio de equilibrio"}
+{"content": "proexport"}
+{"content": "venta corta"}
+{"content": "obligación negociable a corto plazo"}
+{"content": "certificados de depósito a término"}
+{"content": "pago en especie"}
+{"content": "demanda irregular"}
+{"content": "operación en bloque"}
+{"content": "préstamo vencido"}
+{"content": "opción sobre acciones"}
+{"content": "teoria cuantitativa"}
+{"content": "supermercado financiero"}
+{"content": "flexibilidad"}
+{"content": "desgravaciones fiscales a la inversión"}
+{"content": "quiebra"}
+{"content": "déficit federal"}
+{"content": "caso fortuito"}
+{"content": "comercialización"}
+{"content": "inventario"}
+{"content": "depósito a plazo fijo"}
+{"content": "promedio"}
+{"content": "transacción"}
+{"content": "volumen de negocios"}
+{"content": "comprador"}
+{"content": "retroalimentación"}
+{"content": "unidad estándar de negociación"}
+{"content": "negociaciones en base a información confidencial"}
+{"content": "opción sobre futuros"}
+{"content": "cifra"}
+{"content": "patrimonio neto tangible"}
+{"content": "financiación"}
+{"content": "costo del servicio de la deuda"}
+{"content": "ahorro externo"}
+{"content": "acción sin derecho a voto"}
+{"content": "desguazar"}
+{"content": "banco internacional para la reconstrucción y desarrollo (bird)"}
+{"content": "swap de activos"}
+{"content": "inyectar liquidez al mercado"}
+{"content": "opción sobre divisas"}
+{"content": "títulos de crédito"}
+{"content": "habilidades"}
+{"content": "sistema monetario europeo"}
+{"content": "regla del 72"}
+{"content": "demanda de dinero"}
+{"content": "acuerdo de recompra"}
+{"content": "credito mercantil"}
+{"content": "banco de inversión"}
+{"content": "cuentas de orden"}
+{"content": "tendencia alcista"}
+{"content": "cooperativa de crédito"}
+{"content": "accionista"}
+{"content": "riyal"}
+{"content": "posición descubierta"}
+{"content": "compañías de financiamiento comercial"}
+{"content": "fideicomso"}
+{"content": "operador especializado en bonos"}
+{"content": "bienes de consumo no duradero"}
+{"content": "ingreso real"}
+{"content": "consorcio"}
+{"content": "banco comercial"}
+{"content": "amortización"}
+{"content": "intermediario"}
+{"content": "programa operativo anual macroeconomico"}
+{"content": "deducciones de los ingresos"}
+{"content": "bono municipal"}
+{"content": "institución de ahorro"}
+{"content": "sociedad con personería jurídica"}
+{"content": "índice de precios"}
+{"content": "bono con garantía hipotecaria de primer grado"}
+{"content": "trimestre"}
+{"content": "exportaciones netas"}
+{"content": "sociedad cotizante"}
+{"content": "dirección"}
+{"content": "infraestructura"}
+{"content": "convergencia"}
+{"content": "costo total"}
+{"content": "comunidad europea (ce)"}
+{"content": "recompra de bonos"}
+{"content": "pool de hipotecas"}
+{"content": "puntos básicos"}
+{"content": "transaccion"}
+{"content": "contrato de futuros"}
+{"content": "estructura económica"}
+{"content": "calificación de riesgo de corto plazo"}
+{"content": "retorno sobre el capital"}
+{"content": "opción sobre acciones comunes"}
+{"content": "corredor de bolsa"}
+{"content": "oficial de recinto"}
+{"content": "coeficientes de rendimiento"}
+{"content": "jurisprudencia"}
+{"content": "dinero en efectivo"}
+{"content": "ventas brutas"}
+{"content": "corona (moneda nacional de islandia y suecia)"}
+{"content": "dividendos impagos"}
+{"content": "prima sobre el valor de conversión"}
+{"content": "fiduciario"}
+{"content": "préstamo renegociado"}
+{"content": "tasa efectiva"}
+{"content": "gastos de fabricación"}
+{"content": "precio comprador"}
+{"content": "arrendamiento"}
+{"content": "takeover hostil"}
+{"content": "divendo en efectivo"}
+{"content": "título de deuda subyacente"}
+{"content": "liquidar"}
+{"content": "movimiento horizontal de precios"}
+{"content": "rendimiento anual efectivo"}
+{"content": "inflacion"}
+{"content": "publicidad"}
+{"content": "gran industria"}
+{"content": "título a tasa flotante"}
+{"content": "quiebra voluntaria"}
+{"content": "pago contra entrega"}
+{"content": "elasticidad de la demanda"}
+{"content": "sin fines de lucro"}
+{"content": "unidad monetaria europea"}
+{"content": "operación contraria"}
+{"content": "banda de flotación"}
+{"content": "cuando sean distribuidas"}
+{"content": "fondo de inversión combinado"}
+{"content": "grupo vendedor"}
+{"content": "gestión de activos"}
+{"content": "cantidad de acciones en circulación"}
+{"content": "economía externa"}
+{"content": "emisión de bonos subordinados"}
+{"content": "bono basura"}
+{"content": "amortizacion"}
+{"content": "asignación"}
+{"content": "industria liviana"}
+{"content": "préstamo de un día"}
+{"content": "título valor"}
+{"content": "derecho de inscripción"}
+{"content": "asamblea de accionistas"}
+{"content": "libre al costado del buque"}
+{"content": "cuenta saldada"}
+{"content": "balance anual"}
+{"content": "lista de inversiones"}
+{"content": "cambio de valor"}
+{"content": "tipo de cambio forward"}
+{"content": "materias primas"}
+{"content": "ampliación presupuestaria"}
+{"content": "expiración"}
+{"content": "capital aportado"}
+{"content": "remate"}
+{"content": "acumulacion"}
+{"content": "anualidad combinada"}
+{"content": "pronóstico"}
+{"content": "ganancia extraordinaria"}
+{"content": "contrato de franchising"}
+{"content": "mercado negro"}
+{"content": "línea de crédito en varias monedas"}
+{"content": "sistema de convertibilidad de la moneda"}
+{"content": "impuesto sobre productos del trabajo"}
+{"content": "acuerdo de colocación"}
+{"content": "valor actuarial"}
+{"content": "crédito garantizado"}
+{"content": "capital totalmente integrado"}
+{"content": "ganancias por trading"}
+{"content": "cuotas pendientes"}
+{"content": "permuta"}
+{"content": "inversiones socialmente responsables"}
+{"content": "coyuntura bursátil desfavorable"}
+{"content": "acciones en circulación"}
+{"content": "prestamista"}
+{"content": "arancel específico"}
+{"content": "documento por pagar"}
+{"content": "paridad de cambio libre"}
+{"content": "dividendo"}
+{"content": "auditoría obligatoria"}
+{"content": "deudas en moneda extranjera"}
+{"content": "competente"}
+{"content": "pataca"}
+{"content": "mix de productos"}
+{"content": "agente de transferencias"}
+{"content": "moneda de reserva"}
+{"content": "industrias cíclicas"}
+{"content": "cotización en dólares estadounidenses"}
+{"content": "tasa de crecimiento"}
+{"content": "método contable que se basa en el criterio de lo devengado"}
+{"content": "dictamen"}
+{"content": "prospecto"}
+{"content": "contribuciones"}
+{"content": "inversiones diversificadas"}
+{"content": "asesor financiero"}
+{"content": "fast track"}
+{"content": "contrato a precio alzado"}
+{"content": "comisión de precancelación"}
+{"content": "ciclo de vida de un producto"}
+{"content": "monopolio perfecto"}
+{"content": "diferencia cambiaria"}
+{"content": "flotación controlada"}
+{"content": "seguro de vida"}
+{"content": "acta de liquidación"}
+{"content": "agente bursátil"}
+{"content": "fecha de entrega"}
+{"content": "acreedor quirografario"}
+{"content": "produccion"}
+{"content": "sobreemisión"}
+{"content": "cheque certificado"}
+{"content": "tipo de cambio"}
+{"content": "mercado extrabursátil"}
+{"content": "bonos altamente especulativos"}
+{"content": "promedio del mercado"}
+{"content": "sin warrants"}
+{"content": "saldo de la cuenta"}
+{"content": "crédito comercial"}
+{"content": "sobrevaluado"}
+{"content": "cosmovision"}
+{"content": "previsión para deudores incobrables"}
+{"content": "saldo pendiente"}
+{"content": "banca de inversión"}
+{"content": "déficit o superávit extrapresupuestario"}
+{"content": "recibo"}
+{"content": "bono para el desarrollo industrial"}
+{"content": "ventas netas"}
+{"content": "mes de entrega"}
+{"content": "crédito ficticio"}
+{"content": "cotización cruzada"}
+{"content": "ruptura"}
+{"content": "juicio de quiebra"}
+{"content": "línea de tendencia"}
+{"content": "mercado interbancario"}
+{"content": "centro de costos"}
+{"content": "aumento ponderado"}
+{"content": "préstamo sin intereses"}
+{"content": "transacción comercial"}
+{"content": "mercado contado"}
+{"content": "acuerdo"}
+{"content": "capacidad de endeudamiento de los títulos valores"}
+{"content": "certificado"}
+{"content": "mercados secundarios"}
+{"content": "futuros sobre índices bursátiles"}
+{"content": "carta de crédito"}
+{"content": "cuenta inactiva"}
+{"content": "operación para cancelar"}
+{"content": "producto bruto nacional"}
+{"content": "volumen abierto"}
+{"content": "pago anticipado"}
+{"content": "superviviencia"}
+{"content": "estado contable pro forma"}
+{"content": "comisiones brutas por operador"}
+{"content": "acciones de depósito obligatorio"}
+{"content": "pérdida extraordinaria"}
+{"content": "suma total"}
+{"content": "teoría de la segmentación del mercado"}
+{"content": "picos máximos"}
+{"content": "cláusula de amortización anticipada"}
+{"content": "nivel de resistencia"}
+{"content": "medio punto"}
+{"content": "utilidades"}
+{"content": "sociedad gerente de fondos cerrados"}
+{"content": "cuenta fiduciaria"}
+{"content": "acción en blanco"}
+{"content": "mercado sensible"}
+{"content": "dinero falso"}
+{"content": "contabilidad de costos"}
+{"content": "crédito fiscal"}
+{"content": "fondos inmovilizados"}
+{"content": "auditor"}
+{"content": "tablas con información bursátil"}
+{"content": "abandono legal"}
+{"content": "acciones de gran demanda"}
+{"content": "leone"}
+{"content": "cuenta conjunta"}
+{"content": "sociedad barómetro"}
+{"content": "deuda subordinada"}
+{"content": "situación financiera"}
+{"content": "dividendo fijo"}
+{"content": "arqueo"}
+{"content": "crecimiento real"}
+{"content": "disciplina"}
+{"content": "dividendo neto"}
+{"content": "tasa real de retorno"}
+{"content": "activo redituable"}
+{"content": "acta de fusión"}
+{"content": "pasivo"}
+{"content": "puesto"}
+{"content": "dilución"}
+{"content": "plan de acumulación voluntaria"}
+{"content": "banco de ahorro"}
+{"content": "input"}
+{"content": "líder del consorcio colocador"}
+{"content": "acción al portador"}
+{"content": "en la posición financiera"}
+{"content": "extorsión"}
+{"content": "pagaré"}
+{"content": "cerrar una posición bursátil"}
+{"content": "consorcio colocador"}
+{"content": "demanda"}
+{"content": "actividad económica"}
+{"content": "costos de negociación"}
+{"content": "agente de bolsa"}
+{"content": "plan de reinversión de dividendos"}
+{"content": "fuerza relativa"}
+{"content": "cuenta especial de arbitraje"}
+{"content": "toma de fondos a tasa libre de riesgo"}
+{"content": "formulario de suscripción"}
+{"content": "riesgo sistemático"}
+{"content": "estructura del capital"}
+{"content": "bien prendado"}
+{"content": "compensar"}
+{"content": "dividendo declarado"}
+{"content": "valor par"}
+{"content": "billete"}
+{"content": "florín"}
+{"content": "descuento por cantidad"}
+{"content": "economia"}
+{"content": "superávit fiscal"}
+{"content": "markka"}
+{"content": "modelo de valuación de opciones black scholes"}
+{"content": "alianza"}
+{"content": "ratio de siniestros"}
+{"content": "existencias"}
+{"content": "valor de cambio"}
+{"content": "evaluación"}
+{"content": "exportaciones"}
+{"content": "cosa juzgada"}
+{"content": "ajuste"}
+{"content": "oferta agregada"}
+{"content": "honorarios por auditoría"}
+{"content": "inversión"}
+{"content": "debitar"}
+{"content": "volatilidad implícita"}
+{"content": "bienes raíces"}
+{"content": "libre a bordo"}
+{"content": "barómetro"}
+{"content": "mercado continuo"}
+{"content": "costo presupuestado"}
+{"content": "commodities regulados"}
+{"content": "licencias de construcción"}
+{"content": "valor de desecho"}
+{"content": "plazo"}
+{"content": "primera fecha de rescate"}
+{"content": "macroeconomía"}
+{"content": "sindicato"}
+{"content": "ambiente social"}
+{"content": "costo variable"}
+{"content": "trato"}
+{"content": "lote par"}
+{"content": "lanzador de una opción cubierta"}
+{"content": "cuenta sin movimiento"}
+{"content": "crisis económica"}
+{"content": "números índices"}
+{"content": "instrumento financiero"}
+{"content": "con intereses"}
+{"content": "capital con derecho a voto"}
+{"content": "departamento de control"}
+{"content": "precio minorista"}
+{"content": "moneda de curso legal"}
+{"content": "dividendo provisorio"}
+{"content": "intrarrueda"}
+{"content": "cuenta recaudadora"}
+{"content": "fideicomiso cerrado"}
+{"content": "poder"}
+{"content": "fondo común de inversión"}
+{"content": "pirámide de riesgo"}
+{"content": "bureau de créditos"}
+{"content": "usura"}
+{"content": "activos duros"}
+{"content": "tasa de compra"}
+{"content": "familia"}
+{"content": "fondos mutuos"}
+{"content": "andean trade preferance act"}
+{"content": "financiación a largo plazo"}
+{"content": "gasto fiscal"}
+{"content": "bienes"}
+{"content": "campaña publicitaria"}
+{"content": "estrategia de manejo activo de carteras"}
+{"content": "período de gracia"}
+{"content": "todo o nada"}
+{"content": "novación"}
+{"content": "letra de cambio a término"}
+{"content": "saldo diario promedio"}
+{"content": "fondo de inversión de un portfolio"}
+{"content": "préstamo puente"}
+{"content": "activos intangibles"}
+{"content": "gravamen"}
+{"content": "ineficiencia del mercado"}
+{"content": "deuda interna bruta"}
+{"content": "fracción"}
+{"content": "cotización nueva"}
+{"content": "promediar al alza"}
+{"content": "ingresos disponibles"}
+{"content": "opción europea"}
+{"content": "pedido de quiebra a instancia del acreedor"}
+{"content": "precio de ejercicio"}
+{"content": "cotización máxima"}
+{"content": "movimiento"}
+{"content": "contrato entre colocadores"}
+{"content": "bolsa de valores"}
+{"content": "cuenta"}
+{"content": "adelanto en efectivo"}
+{"content": "persona jurídica"}
+{"content": "agente bursátil con cartera propia"}
+{"content": "riesgo cambiario"}
+{"content": "costos fijos"}
+{"content": "volumen operado"}
+{"content": "emisión de bonos en moneda extranjera"}
+{"content": "inversor minorista"}
+{"content": "sociedad por acciones"}
+{"content": "acciones preferidas convertibles"}
+{"content": "gasto devengado"}
+{"content": "activo ilíquido"}
+{"content": "tasa de descuento"}
+{"content": "distribución primaria"}
+{"content": "pagadero"}
+{"content": "organigrama"}
+{"content": "eurodivisa"}
+{"content": "bono corto"}
+{"content": "bono samurai"}
+{"content": "propensión al ahorro"}
+{"content": "prestamista de última instancia"}
+{"content": "reducción de acciones en circulación"}
+{"content": "tasa de interés lombarda"}
+{"content": "bono de participación"}
+{"content": "deuda sin garantía"}
+{"content": "reservas mínimas exigidas por ley"}
+{"content": "venta en descubierto"}
+{"content": "debenture"}
+{"content": "empardado y perdido"}
+{"content": "costo de adquisición"}
+{"content": "fondos disponibles"}
+{"content": "banco regional"}
+{"content": "cuenta con margen insuficiente"}
+{"content": "retorno actual"}
+{"content": "moneda extranjera"}
+{"content": "valuación"}
+{"content": "valor intrínseco"}
+{"content": "emisión de acciones ordinarias"}
+{"content": "licitación"}
+{"content": "asientos en auxiliares"}
+{"content": "corona (moneda nacional de dinamarca y noruega)"}
+{"content": "fusión horizontal"}
+{"content": "capital emitido"}
+{"content": "proporción de acciones ordinarias"}
+{"content": "control presupuestario"}
+{"content": "manual de contabilidad"}
+{"content": "información confidencial"}
+{"content": "punto de inflexión"}
+{"content": "suscripción"}
+{"content": "tomar una posición"}
+{"content": "canasta básica"}
+{"content": "arrendamiento operativo"}
+{"content": "morosidad"}
+{"content": "en baja"}
+{"content": "modelo de valoración de activos financieros"}
+{"content": "salario nominal"}
+{"content": "normalización"}
+{"content": "margen bruto"}
+{"content": "tenedor de bonos"}
+{"content": "arbitraje"}
+{"content": "el pib per cápita"}
+{"content": "debenture subordinado"}
+{"content": "cámara compensadora"}
+{"content": "proceso de planeación"}
+{"content": "prima de la opción"}
+{"content": "costeo directo"}
+{"content": "privilegio"}
+{"content": "tasa interna de retorno (tir)"}
+{"content": "cartel"}
+{"content": "renta variable"}
+{"content": "bono de refinanciación"}
+{"content": "capital social autorizado"}
+{"content": "pagadero a la vista"}
+{"content": "ciclo"}
+{"content": "fusión"}
+{"content": "mercado spot"}
+{"content": "valor de tasación"}
+{"content": "firme"}
+{"content": "persona física"}
+{"content": "relación ganancia-precio"}
+{"content": "crecimiento previsto"}
+{"content": "capital"}
+{"content": "facilidades de pago"}
+{"content": "acciones de voto limitado"}
+{"content": "no acumulativa"}
+{"content": "factor común"}
+{"content": "teoría de la preferencia por la liquidez"}
+{"content": "acción"}
+{"content": "fondo de bonos"}
+{"content": "conversión"}
+{"content": "broker"}
+{"content": "rescatar"}
+{"content": "dividendo bruto"}
+{"content": "adquisición furtiva"}
+{"content": "lanzamiento de una emisión"}
+{"content": "refinanciación de la deuda"}
+{"content": "tasa de interés efectiva"}
+{"content": "punta compradora"}
+{"content": "título de deuda rescatable"}
+{"content": "producto"}
+{"content": "paridad de conversión"}
+{"content": "bono a mediano plazo"}
+{"content": "balance general complementario"}
+{"content": "préstamo a término"}
+{"content": "fecha de vencimiento"}
+{"content": "descuento de documentos"}
+{"content": "ley de retornos decreci entes"}
+{"content": "pagadero a la orden"}
+{"content": "debito"}
+{"content": "salida (de capitales)"}
+{"content": "valor extrínseco"}
+{"content": "activos ocultos"}
+{"content": "aportaciones de seguridad social"}
+{"content": "rescate financiero"}
+{"content": "fideicomisario"}
+{"content": "préstamo en efectivo"}
+{"content": "precio contado"}
+{"content": "egreso"}
+{"content": "superintendencia de valores"}
+{"content": "precio de apertura"}
+{"content": "apalancamiento"}
+{"content": "paraíso fiscal"}
+{"content": "contrato al contado inmediato"}
+{"content": "tratado internacional"}
+{"content": "endeudamiento de corto plazo"}
+{"content": "fecha límite"}
+{"content": "filiales"}
+{"content": "rentable"}
+{"content": "colocación"}
+{"content": "despacho"}
+{"content": "tipo de cambio fijo"}
+{"content": "estatuto de la sociedad"}
+{"content": "cláusula de caducidad de plazos"}
+{"content": "tasa impositiva marginal"}
+{"content": "modelo económico"}
+{"content": "especialista"}
+{"content": "caja de conversión"}
+{"content": "insuficiencia de capital"}
+{"content": "prueba ácida"}
+{"content": "impuesto de aduanas"}
+{"content": "riesgo país"}
+{"content": "escasez de dólares"}
+{"content": "mayorista"}
+{"content": "depósito a plazo"}
+{"content": "estados contables"}
+{"content": "acción cartular"}
+{"content": "utilidad bruta"}
+{"content": "cliente"}
+{"content": "participaciones en el exterior"}
+{"content": "cláusula no a la orden"}
+{"content": "control"}
+{"content": "cooperativa financiera"}
+{"content": "referondo o referendum"}
+{"content": "cifra según libros"}
+{"content": "registro mercantil"}
+{"content": "licenciatario"}
+{"content": "costo fijo"}
+{"content": "licencia de importación"}
+{"content": "consejo de administración"}
+{"content": "servicio de la deuda"}
+{"content": "pagadero al portador"}
+{"content": "título valor de renta fija"}
+{"content": "mínimo margen tolerado"}
+{"content": "oferta monetaria"}
+{"content": "formar mercado"}
+{"content": "gestión de activos y pasivos"}
+{"content": "elección"}
+{"content": "cuenta corriente"}
+{"content": "activo tangible neto por acción"}
+{"content": "zona de transito"}
+{"content": "antedatar"}
+{"content": "comisionista de bolsa"}
+{"content": "transferencias vía financiera"}
+{"content": "acción sin valor nominal"}
+{"content": "títulos valores fácilmente negociables"}
+{"content": "equivalentes de caja"}
+{"content": "asientos de apertura"}
+{"content": "interes"}
+{"content": "vender corto"}
+{"content": "guía rápida o quick reference"}
+{"content": "precio de suscripción"}
+{"content": "carta de intención"}
+{"content": "linea"}
+{"content": "agente pagador de dividendos"}
+{"content": "agente comercial"}
+{"content": "servicio al cliente"}
+{"content": "dividendos a pagar"}
+{"content": "precio soporte"}
+{"content": "cruce de participaciones"}
+{"content": "subsidiarias en el exterior"}
+{"content": "rotación de activos"}
+{"content": "su perávit"}
+{"content": "abreviatura en el ticker"}
+{"content": "plusvalia"}
+{"content": "indicador de eficiencia"}
+{"content": "mercado de futuros"}
+{"content": "hecho revelador del estado de insolvencia"}
+{"content": "reserva para deudores incobrables"}
+{"content": "estar vendido"}
+{"content": "flujo de fondos"}
+{"content": "dólares constantes"}
+{"content": "riesgo propio"}
+{"content": "desgravación fiscal"}
+{"content": "opción descubierta"}
+{"content": "mercado líquido"}
+{"content": "banco interamericano de desarrollo (bid)"}
+{"content": "preferencia por la liquidez"}
+{"content": "adquisición hostil"}
+{"content": "bono de vencimiento único"}
+{"content": "fondo con comisión de entrada"}
+{"content": "compañías afiliadas"}
+{"content": "mandato"}
+{"content": "fecha de emisión"}
+{"content": "declaración impositiva"}
+{"content": "mantenimiento de margen"}
+{"content": "opción"}
+{"content": "hipoteca general"}
+{"content": "declaración jurada"}
+{"content": "sistema financiero de fomento"}
+{"content": "superávit comercial"}
+{"content": "stock"}
+{"content": "estrategia pasiva de manejo de inversiones"}
+{"content": "velocidad de circulación del dinero"}
+{"content": "estabilidad económica"}
+{"content": "valor máximo de un warrant"}
+{"content": "diferir"}
+{"content": "gerencia"}
+{"content": "símbolo de la acción"}
+{"content": "bono del tesoro"}
+{"content": "balance general"}
+{"content": "almacén libro de"}
+{"content": "derecho aduanero"}
+{"content": "fecha de rescate"}
+{"content": "acciones de alto crecimiento"}
+{"content": "pa'anga"}
+{"content": "sin valor"}
+{"content": "expansión monetaria"}
+{"content": "fecha de negociación"}
+{"content": "mercado secundario"}
+{"content": "caja chica"}
+{"content": "cuenta de capital"}
+{"content": "escala invertida"}
+{"content": "gráfico de barras"}
+{"content": "política fiscal"}
+{"content": "fondos federales"}
+{"content": "crédito de renovación automática"}
+{"content": "mercado local"}
+{"content": "acciones preferidas participativas"}
+{"content": "ventaja comparativa"}
+{"content": "bono subordinado"}
+{"content": "renovación"}
+{"content": "dejar de cotizar en bolsa"}
+{"content": "quiebra involuntaria"}
+{"content": "anualidad perpetua"}
+{"content": "compra"}
+{"content": "programa de propiedad participada (ppp)"}
+{"content": "sistema consolidado de cotizaciones"}
+{"content": "acciones no emitidas"}
+{"content": "reactividad"}
+{"content": "contrato a término"}
+{"content": "estado de cesación de pagos"}
+{"content": "manejo de inversiones"}
+{"content": "opción de venta cubierta"}
+{"content": "valor fijado"}
+{"content": "fondo de pensiones"}
+{"content": "contrato de opciones sobre tasas de interés"}
+{"content": "perspectivas económicas"}
+{"content": "ingenieria"}
+{"content": "notificación"}
+{"content": "vender en descubierto"}
+{"content": "normas de auditoría"}
+{"content": "cuña"}
+{"content": "operación a último día del mes"}
+{"content": "precio fijado por subasta"}
+{"content": "estado de resultados consolidado"}
+{"content": "producto e ingreso nacional"}
+{"content": "fecha de adquisición"}
+{"content": "rendimiento anual promedio"}
+{"content": "libro de actas"}
+{"content": "contrato a plazo"}
+{"content": "acciones de primera línea"}
+{"content": "crédito hipotecario"}
+{"content": "propensión a la inversión"}
+{"content": "filial"}
+{"content": "corrección"}
+{"content": "financiación directa"}
+{"content": "boletín de cotización oficial"}
+{"content": "deseconomías de escala"}
+{"content": "realidad"}
+{"content": "custodia"}
+{"content": "valor contable"}
+{"content": "riesgo crediticio"}
+{"content": "ganancia ajustada por inflación"}
+{"content": "contraloria"}
+{"content": "tasas del mercado abierto"}
+{"content": "orden de cancelación y reemplazo"}
+{"content": "método de votación acumulativa"}
+{"content": "anualidad de pago diferido"}
+{"content": "pérdida por revalúo"}
+{"content": "endeudamiento"}
+{"content": "rodados"}
+{"content": "tughrik"}
+{"content": "valor estimado"}
+{"content": "audiencia tarifaria"}
+{"content": "acuerdo entre emisor y colocador"}
+{"content": "inventario inicial"}
+{"content": "lingote"}
+{"content": "reserva mínima"}
+{"content": "coeficiente de liquidez"}
+{"content": "hipoteca revertida"}
+{"content": "emisión con derechos de suscripción"}
+{"content": "ingreso marginal"}
+{"content": "endosar"}
+{"content": "good will"}
+{"content": "inversiones con cotización oficial"}
+{"content": "precio contractual"}
+{"content": "bono declinante"}
+{"content": "tasa de retención"}
+{"content": "sin cupón"}
+{"content": "costo directo"}
+{"content": "cobertura"}
+{"content": "línea del crédito revolvente"}
+{"content": "institucion financiera"}
+{"content": "letra de cambio negociable"}
+{"content": "sin deudas"}
+{"content": "operaciones poscierre"}
+{"content": "deudor hipotecario"}
+{"content": "posición"}
+{"content": "bono de primera clase"}
+{"content": "crédito disponible"}
+{"content": "ganancia neta"}
+{"content": "ejercer"}
+{"content": "aviso de entrega"}
+{"content": "crecimiento económico"}
+{"content": "cubrir una posición abierta"}
+{"content": "tasa de interés"}
+{"content": "tipo de cambio promedio"}
+{"content": "inmunización"}
+{"content": "acción preferida a tasa flotante"}
+{"content": "obligación pendiente de pago"}
+{"content": "opinión del asesor"}
+{"content": "precio de ejercicio nominal"}
+{"content": "oferta de takeover"}
+{"content": "marco alemán"}
+{"content": "hipoteca inversa"}
+{"content": "documento"}
+{"content": "margen del consorcio colocador"}
+{"content": "ejecutar al cierre"}
+{"content": "posición larga"}
+{"content": "compañía inscripta"}
+{"content": "clase"}
+{"content": "industria pesada"}
+{"content": "paridad"}
+{"content": "variables exógenas"}
+{"content": "ciclo de vencimientos"}
+{"content": "accionista mayoritario"}
+{"content": "descentralización"}
+{"content": "economía de escala"}
+{"content": "valores de especulación"}
+{"content": "estrategico"}
+{"content": "coeficiente de inversión"}
+{"content": "precio comprador y vendedor"}
+{"content": "acto reglamentario"}
+{"content": "interés compuesto"}
+{"content": "seguro"}
+{"content": "valor de desguace"}
+{"content": "obligación negociable"}
+{"content": "dracma"}
+{"content": "acción industrial"}
+{"content": "mercados primarios"}
+{"content": "fondo de inversiones inmobiliarias"}
+{"content": "doble piso"}
+{"content": "fecha de cierre de balance"}
+{"content": "contrato de renta garantizada"}
+{"content": "equipos"}
+{"content": "titulo de crédito"}
+{"content": "ganancias inesperadas"}
+{"content": "título de deuda perpetuo"}
+{"content": "negociable"}
+{"content": "nominación"}
+{"content": "los tipos de empresas"}
+{"content": "vida útil"}
+{"content": "deuda externa"}
+{"content": "paridad del poder adquisitivo (ppa)"}
+{"content": "ingreso personal"}
+{"content": "renta líquida"}
+{"content": "compañía diversificada"}
+{"content": "fecha"}
+{"content": "ciclo normal de operaciones"}
+{"content": "oferta total"}
+{"content": "pérdida por diferencias cambiarias"}
+{"content": "presupuesto de recursos humanos"}
+{"content": "tasa de interés que paga el prestatario"}
+{"content": "conocimiento de embarque"}
+{"content": "pasivo corriente"}
+{"content": "costo de adquisición (para fines impositivos)"}
+{"content": "operaciones anónimas"}
+{"content": "rendimiento anual"}
+{"content": "excedente del consumidor"}
+{"content": "descuento de facturas"}
+{"content": "título valor subyacente"}
+{"content": "banca privada"}
+{"content": "política económica"}
+{"content": "cláusula de compromiso negativo"}
+{"content": "transacción neta"}
+{"content": "Índices macroeconómicos básicos"}
+{"content": "triángulo"}
+{"content": "ventaja competitiva"}
+{"content": "bienes inmateriales"}
+{"content": "actuario"}
+{"content": "punta vendedora"}
+{"content": "costo promedio"}
+{"content": "insolvente"}
+{"content": "producto de la venta"}
+{"content": "modulo"}
+{"content": "saldo diario"}
+{"content": "informes financieros trimestrales"}
+{"content": "opción vencida"}
+{"content": "vida residual de un bono"}
+{"content": "canje de cheque"}
+{"content": "carta de pago"}
+{"content": "acciones que se negocian en el mercado extrabursátil"}
+{"content": "aceptación"}
+{"content": "orden a precio de cierre"}
+{"content": "posición corta en opciones"}
+{"content": "arancel aduanero"}
+{"content": "cambio vendedor"}
+{"content": "petrodólares"}
+{"content": "testaferro"}
+{"content": "cifras previstas"}
+{"content": "ratio operativo"}
+{"content": "liquidación con un día de atraso"}
+{"content": "a largo plazo"}
+{"content": "deudas incobrables"}
+{"content": "deuda consolidada"}
+{"content": "lempira"}
+{"content": "guía del inversor"}
+{"content": "nota del tesoro"}
+{"content": "fondo agresivo"}
+{"content": "valor contable neto"}
+{"content": "crédito renovable"}
+{"content": "union aduanera"}
+{"content": "fecha de registro"}
+{"content": "subsidiaria"}
+{"content": "captación de fondos"}
+{"content": "conglomerado"}
+{"content": "bienes de producción"}
+{"content": "subsidiario"}
+{"content": "reembolso"}
+{"content": "utilidad neta"}
+{"content": "mercado a futuro"}
+{"content": "proyecto"}
+{"content": "capital accionario en circulación"}
+{"content": "inversiones por fórmula"}
+{"content": "entrega parcial"}
+{"content": "tesorero"}
+{"content": "ciclo económico"}
+{"content": "fraccionamiento de acciones"}
+{"content": "suspensión temporaria"}
+{"content": "escudo"}
+{"content": "acciones atractivas"}
+{"content": "mercado de vendedores"}
+{"content": "arancel general y convencional"}
+{"content": "productividad"}
+{"content": "moneda no convertible"}
+{"content": "riesgo de mercado"}
+{"content": "ejercicio contable"}
+{"content": "riesgo diversificable"}
+{"content": "agencia de información comercial"}
+{"content": "costo de capital"}
+{"content": "mercado de dinero"}
+{"content": "picos descendentes"}
+{"content": "derecho de retención"}
+{"content": "inmueble que genera rentas"}
+{"content": "ingreso bruto ajustado"}
+{"content": "postergación del pago de impuestos"}
+{"content": "estrategia cóndor"}
+{"content": "controller"}
+{"content": "venta cruzada"}
+{"content": "ingreso per capita"}
+{"content": "bienes inmuebles"}
+{"content": "agente de recinto"}
+{"content": "bono conejo"}
+{"content": "semestre"}
+{"content": "educacion"}
+{"content": "cerrar una posición"}
+{"content": "home banking"}
+{"content": "bono respaldado en oro"}
+{"content": "diversificación internacional"}
+{"content": "anualidad diferida de pagos periódicos"}
+{"content": "dividendo en acciones"}
+{"content": "principios de contabilidad generalmente aceptados"}
+{"content": "retorno sobre las ventas"}
+{"content": "fusión propiamente dicha"}
+{"content": "a precio de mercado"}
+{"content": "técnicas de protección de  cartera"}
+{"content": "retorno total"}
+{"content": "arancel de columna única"}
+{"content": "vender a término"}
+{"content": "oferta primaria"}
+{"content": "dividendos devengados"}
+{"content": "deudores incobrables"}
+{"content": "mercado alcista"}
+{"content": "ventas por razones impositivas"}
+{"content": "oferta pública inicial"}
+{"content": "valor fiscal"}
+{"content": "opción americana"}
+{"content": "retiro automático"}
+{"content": "responsabilidad solidaria"}
+{"content": "a la par"}
+{"content": "curva de rendimiento negativa"}
+{"content": "intercambio de activos"}
+{"content": "prorrogas a nivel de contrato"}
+{"content": "tiempo"}
+{"content": "sobrecalentamiento"}
+{"content": "premisas"}
+{"content": "hipótesis del mercado eficiente"}
+{"content": "documento de emisión"}
+{"content": "folio"}
+{"content": "saldo disponible"}
+{"content": "vencer"}
+{"content": "título de deuda convertible"}
+{"content": "estado"}
+{"content": "bono rescatable"}
+{"content": "endoso"}
+{"content": "cartera de mercado"}
+{"content": "negociación suspendida"}
+{"content": "modificacion regularizable"}
+{"content": "hombre económico"}
+{"content": "capital contable"}
+{"content": "tendencia a la baja"}
+{"content": "dinar"}
+{"content": "interpolación"}
+{"content": "equilibrios fundamentales"}
+{"content": "impuestos sobre transferencias"}
+{"content": "carga tributaria"}
+{"content": "saldo negativo"}
+{"content": "tasa de reinversión"}
+{"content": "accionista registrado"}
+{"content": "seguro de vida de prima única"}
+{"content": "capital variable"}
+{"content": "rotación de existencias"}
+{"content": "arrendamiento financiero"}
+{"content": "bonificación"}
+{"content": "cuenta en fideicomiso"}
+{"content": "fluctuación"}
+{"content": "todo o parte"}
+{"content": "precio de mercado"}
+{"content": "anualidad"}
+{"content": "economía"}
+{"content": "departamentalizar"}
+{"content": "capitalización"}
+{"content": "caja de ahorro"}
+{"content": "cotización en firme"}
+{"content": "crack"}
+{"content": "auge de consumo"}
+{"content": "negociar si llega al precio"}
+{"content": "adelantos y retrasos"}
+{"content": "revertir un swap"}
+{"content": "distribución de ganancias de capital"}
+{"content": "saldo bancario"}
+{"content": "cuentas discrecionales"}
+{"content": "acciones mellizas"}
+{"content": "firma no socia"}
+{"content": "deuda per cápita"}
+{"content": "cobertura larga"}
+{"content": "monetarista"}
+{"content": "consumo"}
+{"content": "títulos de deuda del tesoro"}
+{"content": "recibir entrega"}
+{"content": "anticipo"}
+{"content": "transferencia"}
+{"content": "superestructura"}
+{"content": "fecha de compra"}
+{"content": "capital de riesgo"}
+{"content": "commercial paper de máxima calidad"}
+{"content": "vender corto teniendo la especie depositada en cuenta"}
+{"content": "transferencia electrónica de fondos"}
+{"content": "acciones y obligaciones negociables convertibles"}
+{"content": "incertidumbre"}
+{"content": "eurobono"}
+{"content": "dividendo por liquidación"}
+{"content": "dividendo complementario"}
+{"content": "informe del auditor"}
+{"content": "cobertura corta"}
+{"content": "gestión"}
+{"content": "estrategia de inversión"}
+{"content": "registro"}
+{"content": "cabeza y hombros"}
+{"content": "innovación"}
+{"content": "reglas"}
+{"content": "emisión de derechos de suscripción"}
+{"content": "sociedad de familia"}
+{"content": "ganadería"}
+{"content": "cuentas de orden (activo)"}
+{"content": "bono perpetuo"}
+{"content": "derechos especiales de giro (deg)"}
+{"content": "precio de compra"}
+{"content": "programación"}
+{"content": "fórmulas alternativas de inversión"}
+{"content": "préstamo del exterior"}
+{"content": "regalía"}
+{"content": "balboa"}
+{"content": "reestructuración de la deuda"}
+{"content": "depreciación"}
+{"content": "préstamo para la vivienda"}
+{"content": "asignación de fondos"}
+{"content": "futuro sobre opciones"}
+{"content": "securitización"}
+{"content": "cartera eficiente"}
+{"content": "elasticidad de la oferta"}
+{"content": "swap de bonos"}
+{"content": "activo fácilmente realizable"}
+{"content": "riesgo específico"}
+{"content": "movimiento mínimo"}
+{"content": "fideicomiso"}
+{"content": "swap cruzado de intereses y divisas"}
+{"content": "vendedor de opciones"}
+{"content": "dilución total de la ganancias por acción"}
+{"content": "estudio de mercado"}
+{"content": "contrabando"}
+{"content": "base monetaria"}
+{"content": "ahorro personal"}
+{"content": "totalmente distribuida"}
+{"content": "fecha de liquidación"}
+{"content": "activo realizable"}
+{"content": "relación precio/valor libro"}
+{"content": "ejecución"}
+{"content": "contrato aleatorio"}
+{"content": "liquidez"}
+{"content": "adeudo"}
+{"content": "activo improductivo"}
+{"content": "naciones unidas"}
+{"content": "capital social"}
+{"content": "entrega a futuro"}
+{"content": "banca"}
+{"content": "proceso administrativo"}
+{"content": "fondo de commodities"}
+{"content": "banco"}
+{"content": "hipotecas por pagar"}
+{"content": "cuenta institucional"}
+{"content": "capacidad de endeudamiento"}
+{"content": "valuación fiscal"}
+{"content": "fondo de fondos"}
+{"content": "bienes no transables"}
+{"content": "dinero barato"}
+{"content": "adelanto"}
+{"content": "libro del especialista"}
+{"content": "costo primo"}
+{"content": "préstamo con aval personal"}
+{"content": "asesor de inversiones"}
+{"content": "demanda negativa"}
+{"content": "dividendo en bonos"}
+{"content": "declaración de ganancias"}
+{"content": "ajuste de periodos anteriores"}
+{"content": "costo de oportunidad"}
+{"content": "tipo de cambio vendedor"}
+{"content": "libros contables"}
+{"content": "neutral"}
+{"content": "circulación monetaria"}
+{"content": "call bancario"}
+{"content": "rendimiento de la acción"}
+{"content": "bien fungible"}
+{"content": "ganancia no realizada"}
+{"content": "sector económico en expansión"}
+{"content": "se omite el volumen negociado"}
+{"content": "banco emisor"}
+{"content": "línea de mercado"}
+{"content": "ajuste contable"}
+{"content": "cuentas a cobrar"}
+{"content": "insumo"}
+{"content": "desregulación"}
+{"content": "unidad mínima de negociación"}
+{"content": "calificación crediticia"}
+{"content": "vencido"}
+{"content": "egresos fuera de la explotación"}
+{"content": "refugio fiscal"}
+{"content": "bonos con opción cubierta"}
+{"content": "asiento contable"}
+{"content": "disolución del consorcio colocador"}
+{"content": "valor de contado"}
+{"content": "saldo promedio"}
+{"content": "rendimiento nominal"}
+{"content": "ingresos adicionales"}
+{"content": "proyecto de"}
+{"content": "inflación de producto"}
+{"content": "acuñar"}
+{"content": "analisis de sensibilidad"}
+{"content": "activo pignorado"}
+{"content": "riesgo de liquidez"}
+{"content": "fallas del mercado"}
+{"content": "fondo de inversión con comisión de entrada"}
+{"content": "inflación galopante"}
+{"content": "compañía controlada"}
+{"content": "situado fiscal"}
+{"content": "banda de fluctuación"}
+{"content": "ajuste presupuestal"}
+{"content": "desarrollo economico"}
+{"content": "bono para viviendas"}
+{"content": "costo de operación"}
+{"content": "estabilidad economica"}
+{"content": "con dividendo"}
+{"content": "tomador de opciones"}
+{"content": "usos comerciales"}
+{"content": "facturación"}
+{"content": "compra financiada con deuda"}
+{"content": "reclamo"}
+{"content": "quetzal"}
+{"content": "inmunización activa"}
+{"content": "libro contable"}
+{"content": "bonos de primera línea"}
+{"content": "cuenta fideicomisaria"}
+{"content": "intermediario financiero"}
+{"content": "riesgo de base"}
+{"content": "moneda fuerte"}
+{"content": "fusión vertical"}

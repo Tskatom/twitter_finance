@@ -22,7 +22,8 @@ def makeTwitterRequest(t, twitterFunction, max_errors=3, *args, **kwArgs):
             error_count = 0
             wait_period = handleTwitterHTTPError(e, t, wait_period)
             if wait_period is None:
-                return
+                print 'Coming Here--'
+                return None
         except URLError, e:
             error_count += 1
             print >> sys.stderr, "URLError encountered. Continue"
@@ -70,18 +71,31 @@ def _getFriendsOrFollowersUsingFunc(func, key_name,
     cursor = -1
     result = []
     while cursor != 0:
-        response = makeTwitterRequest(
-            t,
-            func,
-            screen_name=screen_name,
-            user_id=user_id,
-            cursor=cursor)
-        for _id in response['ids']:
-            result.append(_id)
-            r.sadd(getRedisIdByScreenName(screen_name, key_name), _id)
-        cursor = response['next_cursor']
-        scard = r.scard(getRedisIdByScreenName(screen_name, key_name))
-        print >> sys.stderr, 'Fetched %s ids for %s' % (scard, screen_name)
+        if screen_name is not None:
+            response = makeTwitterRequest(
+                t,
+                func,
+                screen_name=screen_name,
+                cursor=cursor)
+        elif user_id is not None:
+            response = makeTwitterRequest(
+                t,
+                func,
+                user_id=user_id,
+                cursor=cursor)
+        else:
+            print "Please input screen_name or user_id"
+            return result
+
+        if response is not None:
+            for _id in response['ids']:
+                result.append(_id)
+                r.sadd(getRedisIdByScreenName(screen_name or user_id, key_name), _id)
+            cursor = response['next_cursor']
+        else:
+            break
+        scard = r.scard(getRedisIdByScreenName(screen_name or user_id, key_name))
+        print >> sys.stderr, 'Fetched %s ids for %s' % (scard, screen_name or user_id)
         if scard >= limit:
             break
 

@@ -1,0 +1,25 @@
+wordlist:
+
+step1:
+grep -i "financiamiento\|inversionista\|noticias\|Financiera\|de Hacienda\|Securities exchange\|intercambio\|valores\|bolsa\|inversión\|capital\|financiero\|Economía\|Comercio\|América Latina\|negocios\|finanzas\|economía\|política\|tecnología\|La Nación, medio de comunicación\|Gobierno\|Finanzas\|Capitales\|Mercado\|Financeiro\|bursátiles\|económicos\|Economic\|Finanzas\|Negocios\|político\|política\|Centroamérica\|bursátiles\|económico\|noticioso\|Bancos\|Financieras\|minería\|minero energético\|la Bolsa de Valores"
+
+step2:
+remove the words related to personal or individual such as I, student, economist, university, Economista, Estudiante, me, soy, mi , Universidad
+remove economist, instudstia
+
+grep -iv "i \|student\|economist\|university\|Economista\|Estudiante\|me \|soy \|mi \|Universidad\|le \|te \|ba \|Egresado\|estudiando\|master\|Amo la\|Amante\|interesado\|ms \|Estudiando\| change |estoy \|Magister\|interés\|música\|universitarios\|i'\|hermano\|esposa\|Quiero un\|Licenciado\|estoy \|interested\|ing\.\|Estudio\|Enamorado\|Lo mío es"
+
+step3:
+remove the occupation and position
+grep -iv "abogado\|Webdesigner\|Designer\|periodista\|Diseñador\|Ingeniero\|Profesor\|medico cirujano\|musicomano\|Consultor\|Manager\|engineer\|Programador\|daddy\|CEO \|CFO \|CTO \|psicóloga"
+
+
+step4:
+remove unrelated industry
+
+grep -iv "musica\|"
+
+
+---------------------------------------------------------
+
+grep -i "financiamiento\|inversionista\|noticias\|Financiera\|de Hacienda\|Securities exchange\|intercambio\|valores\|bolsa\|inversión\|capital\|financiero\|Economía\|Comercio\|América Latina\|negocios\|finanzas\|economía\|política\|tecnología\|La Nación, medio de comunicación\|Gobierno\|Finanzas\|Capitales\|Mercado\|Financeiro\|bursátiles\|económicos\|Economic\|Finanzas\|Negocios\|político\|política\|Centroamérica\|bursátiles\|económico\|noticioso\|Bancos\|Financieras\|minería\|minero energético\|la Bolsa de Valores" | grep -iv "i \|student\|economist\|university\|Economista\|Estudiante\|me \|soy \|mi \|Universidad\|le \|te \|ba \|Egresado\|estudiando\|master\|Amo la\|Amante\|interesado\|ms \|Estudiando\| change |estoy \|Magister\|interés\|música\|universitarios\|i'\|hermano\|esposa\|Quiero un\|Licenciado\|estoy \|interested\|ing\.\|Estudio\|Enamorado\|Lo mío es"
