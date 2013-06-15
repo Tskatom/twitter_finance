@@ -12,7 +12,7 @@ import json
 from random import shuffle
 
 
-def makeTwitterRequest(t, twitterFunction, max_errors=3, *args, **kwArgs):
+def makeTwitterRequest(twitterFunction, max_errors=3, *args, **kwArgs):
     wait_period = 2
     error_count = 0
     while True:
@@ -20,10 +20,9 @@ def makeTwitterRequest(t, twitterFunction, max_errors=3, *args, **kwArgs):
             return twitterFunction(*args, **kwArgs)
         except twitter.api.TwitterHTTPError, e:
             error_count = 0
-            wait_period = handleTwitterHTTPError(e, t, wait_period)
+            wait_period = handleTwitterHTTPError(e, wait_period)
             if wait_period is None:
-                print 'Coming Here--'
-                return None
+                return
         except URLError, e:
             error_count += 1
             print >> sys.stderr, "URLError encountered. Continue"
@@ -32,54 +31,49 @@ def makeTwitterRequest(t, twitterFunction, max_errors=3, *args, **kwArgs):
                 raise
 
 
-def handleTwitterHTTPError(e, t, wait_period=2):
+def handleTwitterHTTPError(e, wait_period=2, sleep_when_rate_limited=True):
     if wait_period > 3600:  # seconds
         print >> sys.stderr, "Too many retries, Quitting"
         raise e
     if e.e.code == 401:
         print >> sys.stderr, "Encountered 401 Error (Not Authorized)"
         return None
+    elif e.e.code == 429:
+        print >> sys.stderr, 'Encountered 429 Error (Rate limit Excessed)'
+        if sleep_when_rate_limited:
+            print >> sys.stderr, "Sleeping for 15 minutes "
+            time.sleep(60 * 15 + 5)
+            print >> sys.stderr, "Awake now and trying to reconnect"
+            return 2
     elif e.e.code in (502, 503):
         print >> sys.stderr, "Encountered %i error, \
                 Will retry in %d" % (e.e.code, wait_period)
         time.sleep(wait_period)
         wait_period *= 1.5
         return wait_period
-    elif _getRemainingHits(t) == 0:
-        status = t.application.rate_limit_status()
-        now = time.time()  # UTC
-        when_rate_limit_resets = status['resources']['friends']['/friends/ids']['reset']
-        sleep_time = max(when_rate_limit_resets - now, 5)
-        print >> sys.stderr, 'Rate limit reached, \
-                Retry in %d secs' % sleep_time
-        time.sleep(sleep_time)
-        return 2
     else:
         print >> sys.stderr, "Unexpected exception: %d" % e.e.code
-        time.sleep(wait_period)
-        wait_period *= 1.5
-        return wait_period
-
-
-def _getRemainingHits(t):
-    return t.application.rate_limit_status()['resources']['friends']['/friends/ids']['remaining']
+        raise e
 
 
 # A template-like function that can get friends or followers
-def _getFriendsOrFollowersUsingFunc(func, key_name,
-                                    t, r, screen_name=None, user_id=None, limit=10000):
+def _getFriendsOrFollowersUsingFunc(func,
+                                    key_name,
+                                    t,
+                                    r,
+                                    screen_name=None,
+                                    user_id=None,
+                                    limit=10000):
     cursor = -1
     result = []
     while cursor != 0:
         if screen_name is not None:
             response = makeTwitterRequest(
-                t,
                 func,
                 screen_name=screen_name,
                 cursor=cursor)
         elif user_id is not None:
             response = makeTwitterRequest(
-                t,
                 func,
                 user_id=user_id,
                 cursor=cursor)
@@ -90,12 +84,17 @@ def _getFriendsOrFollowersUsingFunc(func, key_name,
         if response is not None:
             for _id in response['ids']:
                 result.append(_id)
-                r.sadd(getRedisIdByScreenName(screen_name or user_id, key_name), _id)
+                r.sadd(getRedisIdByScreenName(
+                    screen_name or user_id,
+                    key_name), _id)
             cursor = response['next_cursor']
         else:
             break
-        scard = r.scard(getRedisIdByScreenName(screen_name or user_id, key_name))
-        print >> sys.stderr, 'Fetched %s ids for %s' % (scard, screen_name or user_id)
+        scard = r.scard(getRedisIdByScreenName(
+            screen_name or user_id,
+            key_name))
+        print >> sys.stderr, \
+            'Fetched %s ids for %s' % (scard, screen_name or user_id)
         if scard >= limit:
             break
 
@@ -125,7 +124,7 @@ def getUserInfo(
         screen_names_str = ','.join(screen_names[:100])
         screen_names = screen_names[100:]
 
-        response = makeTwitterRequest(t, t.users.lookup,
+        response = makeTwitterRequest(t.users.lookup,
                                       screen_name=screen_names_str)
 
         if response is None:
@@ -142,8 +141,7 @@ def getUserInfo(
     while len(user_ids) > 0:
         user_ids_str = ','.join([str(_id) for _id in user_ids[:100]])
         user_ids = user_ids[100:]
-        response = makeTwitterRequest(t,
-                                      t.users.lookup,
+        response = makeTwitterRequest(t.users.lookup,
                                       user_id=user_ids_str)
         if response is None:
             break
@@ -159,6 +157,13 @@ def getUserInfo(
         info.extend(response)
 
     return info
+
+
+# for calculate the max_id parameter for statuese, which is necessary in order
+# to traverse a timeline data
+def getNextQueryMaxIdParam(statuses):
+    return min([status['id'] for status in statuses])
+
 
 if __name__ == "__main__":
     pass

@@ -34,5 +34,30 @@ def random_sample_users(user_file, out_file, num):
     result = translator.translate_file(out_file, "es", "en")
     return result
 
+
+def extract_users(tweet_file, user_file):
+    users = []
+    with codecs.open(tweet_file, "r") as tf, \
+            codecs.open(user_file, "w") as uf:
+        for line in tf:
+            tweet = json.loads(line)
+            user = tweet.get("user", None)
+            if user:
+                if user['screen_name'] not in users:
+                    users.append(user['screen_name'])
+                    uf.write(json.dumps(
+                        user,
+                        ensure_ascii=False).encode('utf-8') + "\n")
+                if "retweeted_status" in tweet and \
+                   "user" in tweet["retweeted_status"]:
+                    re_user = tweet["retweeted_status"]["user"]
+                    if re_user["screen_name"] not in users:
+                        users.append(re_user['screen_name'])
+                        uf.write(json.dumps(
+                            re_user,
+                            ensure_ascii=False).encode('utf-8') + "\n")
+
+    return users
+
 if __name__ == "__main__":
     pass
