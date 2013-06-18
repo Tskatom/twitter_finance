@@ -10,7 +10,6 @@ import json
 
 def load_file(tweet_file):
     net = nx.DiGraph()
-
     with open(tweet_file, 'r') as t_r:
         i = 0
         for line in t_r.readlines():
@@ -18,14 +17,15 @@ def load_file(tweet_file):
             i += 1
             tweet = json.loads(line)
             #extract nodes info from tweet
-            user_name = tweet['interaction']['author']['username']  # username
+            user_name = tweet['interaction']['author']['username'].encode('ascii', 'ignore')  # username
             tweet_id = tweet['twitter']['id']  # tweetId
-            tweet_content = tweet['interaction']['content']  # tweet content
+            tweet_content = tweet['interaction']['content'].encode('ascii', 'ignore')  # tweet content
             create_time = tweet['interaction']['created_at']
             language = tweet['BasisEnrichment']['language']
-
+            if language is None:
+                language = 'Spanish'
             net.add_node(tweet_id, content=tweet_content,
-                         time=create_time, lan=language, type='TWEET')
+                         lan=language, type='TWEET')
             net.add_node(user_name, type='USER')
             net.add_edge(user_name, tweet_id, type='CREATED')
 
@@ -52,7 +52,7 @@ def load_file(tweet_file):
                 origin_user_name = tweet['twitter']['retweeted']['user']['screen_name']
                 origin_create_time = tweet['twitter']['retweeted']['created_at']
                 net.add_node(origin_tweet_id, content=tweet_content,
-                             time=origin_create_time, lan=language, type='TWEET')
+                             lan=language, type='TWEET')
                 net.add_node(origin_user_name, type='USER')
                 net.add_edge(origin_tweet_id, tweet_id, type='RETWEETED')
                 net.add_edge(origin_user_name, origin_tweet_id, type='CREATED')
@@ -69,14 +69,15 @@ def load_file(tweet_file):
                 for user in mentions:
                     net.add_node(user, type='USER')
                     net.add_edge(tweet_id, user, type='MENTION')
-
+            print "finished", user_name, tweet_id
     return net
 
 
 def main():
-    tweet_file = '/media/2488-4033/data/filterd_tweet.txt'
+    tweet_file = '/media/2488-4033/data/filter/Costa_Rica/Costa Rica_2013-12_2013_01_filtered_tweet_0.txt'
     net = load_file(tweet_file)
-    nx.write_graphml(net, '/media/2488-4033/data/tweet.graphml')
+    nx.write_graphml(net, '/media/2488-4033/data/Costa_Rica_tweet.graphml')
+    #nx.write_gml(net, '/media/2488-4033/data/Costa_Rica_tweet.gml')
 
 
 if __name__ == "__main__":
