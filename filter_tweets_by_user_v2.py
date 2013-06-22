@@ -6,6 +6,7 @@ __email__ = "tskatom@vt.edu"
 
 from etool import args
 import sys
+import os
 import json
 import codecs
 
@@ -46,6 +47,8 @@ def parse_arg():
                     help="Flag: input from stdin")
     ap.add_argument('--user', dest='user_file',
                     type=str, help='User file')
+    ap.add_argument('--folder', type=str,
+                    help="tweets folder")
     arg = ap.parse_args()
     return arg
 
@@ -53,6 +56,8 @@ def parse_arg():
 def main():
     arg = parse_arg()
     tweetFilter = Filter(arg.user_file)
+    out_dir = "/media/2488-4033/data/filter/total"
+
     if arg.cat:
         #input from stdin
         ins = codecs.getreader('utf-8')(sys.stdin)
@@ -60,6 +65,18 @@ def main():
         for t in ins:
             if tweetFilter.filter(t):
                 outs.write(t)
+    elif arg.folder:
+        files = os.listdir(arg.folder)
+        for f in files:
+            full_f = os.path.join(arg.folder, f)
+            if os.path.isfile(full_f):
+                in_f = codecs.open(full_f)
+                out_file = os.path.join(out_dir, "filtered_" + f)
+                with codecs.open(out_file, 'w') as o_f:
+                    for t in in_f:
+                        if tweetFilter.filter(t):
+                            o_f.write(t)
+                in_f.close()
 
 
 if __name__ == "__main__":
