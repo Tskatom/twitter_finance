@@ -9,6 +9,40 @@ import random
 import codecs
 import auto_translate as at
 import json
+import re
+
+
+def group_user_by_country(user_file):
+    user_group = {"others": []}
+    rules = {"CostaRica": ["Costa Rica"], "Argentina": ["Argentina"],
+             "Brazil": ["Brazil", "Brasil"], "Mexico": ["Mexico", "México"],
+             "Chile": ["Chile"], "Colombia": ["Colombia"],
+             "Panama": ["Panama", "Panamá"], "Venezuela": ["Venezuela"],
+             "Peru": ["Peru", "Perú"]}
+
+    country_rule = {}
+    for country in rules:
+        country_rule[country] = "(" + '|'.join(rules[country]) + ")"
+    with codecs.open(user_file) as uf:
+        for l in uf:
+            l = json.loads(l)
+            location = l["location"]
+            #check by country
+            flag = False
+            for country in country_rule:
+                if re.search(country_rule[country], location):
+                    flag = True
+                    if country not in user_group:
+                        user_group[country] = []
+                    user_group[country].append(l['id_str'])
+                    break
+            if not flag:
+                user_group["others"].append(l['id_str'])
+    for country in user_group:
+        c_f = country + "_users.txt"
+        with codecs.open(c_f, 'w') as cfw:
+            for _id in user_group[country]:
+                cfw.write("%s\n" % _id)
 
 
 def random_sample_users(user_file, out_file, num):
