@@ -10,6 +10,7 @@ from dateutil import parser
 import sys
 from etool import args
 import os
+import re
 
 
 COUNTRY = ["Argentina", "Brazil", "Chile", "Colombia", "Costa Rica",
@@ -87,22 +88,25 @@ def load_file(tweet_file):
     return net
 
 
-def handle_by_folder(in_dir, out_dir):
+def handle_by_folder(in_dir, out_dir, country):
     files = os.listdir(in_dir)
 
     for f in files:
         full_f = os.path.join(in_dir, f)
         if not os.path.isfile(full_f):
             continue
-        handle_by_file(out_dir, full_f)
+        handle_by_file(out_dir, full_f, country)
 
 
-def handle_by_file(out_dir, tweet_file):
+def handle_by_file(out_dir, tweet_file, country):
     try:
         if not os.path.exists(out_dir):
             os.makedirs(out_dir)
 
         net = load_file(tweet_file)
+        net.graph["country"] = country
+        g_date = re.search(r'\d{4}-\d{2}-\d{2}', tweet_file).group()
+        net.graph["date"] = g_date
         out_file = os.path.join(out_dir,
                                 "graph_" + tweet_file.split(os.sep)[-1])
         nx.write_gpickle(net, out_file + ".gpickle")
@@ -113,9 +117,9 @@ def handle_by_file(out_dir, tweet_file):
 
 def main():
     ap = args.get_parser()
-    ap.add_argument('--out', type=str, help='tweet file folder',
+    ap.add_argument('--out', type=str, help='graph output folder',
                     default='./')
-    ap.add_argument('--inf', type=str, help='graph out put folder')
+    ap.add_argument('--inf', type=str, help='tweet input folder')
     ap.add_argument('--infiles', type=str, nargs='+',
                     help='list of files to be handled')
     ap.add_argument('--c', type=str, nargs='+',
@@ -134,12 +138,12 @@ def main():
             in_folder = os.path.join(arg.inf, country.replace(" ", ""))
             out_folder = os.path.join(arg.out, "graph")
             out_folder = os.path.join(out_folder, country.replace(" ", ""))
-            handle_by_folder(in_folder, out_folder)
+            handle_by_folder(in_folder, out_folder, country)
     elif arg.infiles:
             for f in arg.infiles:
-                handle_by_file(arg.out, f)
+                handle_by_file(arg.out, f, country_list[0])
     elif arg.dirf:
-        handle_by_folder(arg.dirf, arg.out)
+        handle_by_folder(arg.dirf, arg.out, country_list[0])
 
 if __name__ == "__main__":
     main()
