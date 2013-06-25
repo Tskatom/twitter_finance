@@ -10,7 +10,6 @@ import json
 import os
 from etool import args
 from collections import Counter
-import requests
 
 
 class Netsis:
@@ -87,9 +86,12 @@ class Netsis:
         self.count_tweet_activity()
 
     def get_activity(self):
-        self.hot_hashtag_num = max(Counter(self.tweet_hashtag).values())
+        if len(self.tweet_hashtag) == 0:
+            self.hot_hashtag_num = 0
+        else:
+            self.hot_hashtag_num = max(Counter(self.tweet_hashtag).values())
         #get original urls
-        self.o_urls = []
+        #self.o_urls = []
         #for s_url in self.tweet_url:
         #    try:
         #        print s_url
@@ -101,7 +103,10 @@ class Netsis:
         #        #add the original url to url list
         #        self.o_urls.append(s_url)
         #        continue
-        self.hot_url_num = max(Counter(self.tweet_url).values())
+        if len(self.tweet_url) == 0:
+            self.hot_url_num = 0
+        else:
+            self.hot_url_num = max(Counter(self.tweet_url).values())
 
     def analysis(self):
         self.get_net_density()
