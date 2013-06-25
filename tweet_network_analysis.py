@@ -9,6 +9,8 @@ import re
 import json
 import os
 from etool import args
+from collections import Counter
+import requests
 
 
 class Netsis:
@@ -18,7 +20,6 @@ class Netsis:
     #number of tweets that mentions users in G
     #number of hashtags used in all tweets in G
     #number of tweets with URLs in G
-    #number of different users that post a tweet in G
     #average tweets being sent per user
     #the hotest hashtag
     #the hotest url
@@ -40,21 +41,13 @@ class Netsis:
         self.country = self.g.graph["country"]
         self.date = self.g.graph["date"]
 
-    def count_retweet(self):
-        self.retweets = []
-        for node, edges in self.g.edge.items():
-            for target, attrs in edges.items():
-                type = attrs.get('type', None)
-                if type == 'RETWEETED':
-                    self.retweets.append(target)
-
     def count_tweet_activity(self):
         self.tweet_mention = []
         self.tweet_hashtag = []
         self.tweet_url = []
         self.retweets = []
         for tweet in self.summary["TWEET"]:
-            if tweet in self.g.edges():
+            if tweet in self.g.edge:
                 edgs = self.g.edge[tweet]
                 for e, attrs in edgs.items():
                     if attrs['type'] == 'MENTION':
@@ -64,7 +57,12 @@ class Netsis:
                     elif attrs['type'] == 'CITED':
                         self.tweet_url.append(e)
                     elif attrs['type'] == 'RETWEETED':
-                        self.retweet.append(tweet)
+                        self.retweets.append(tweet)
+        self.tweet_num = len(self.summary["TWEET"])
+        self.retweet_num = len(self.retweets)
+        self.tweet_hashtag_num = len(self.tweet_hashtag)
+        self.tweet_url_num = len(self.tweet_url)
+        self.tweet_mens_num = len(self.tweet_mention)
 
     def get_net_density(self):
         self.density = nx.density(self.g)
@@ -79,21 +77,48 @@ class Netsis:
         self.num_weakly_components = nx.weakly_connected\
             .number_weakly_connected_components(self.g)
 
-    def summary(self):
-        for n in self.nodes():
+    def run_summary(self):
+        for n in self.nodes:
             node = self.g.node[n]
             type = node['type']
-            self.summary[type] = self.summary.setdefult(type, []).append(n)
+            self.summary.setdefault(type, [])
+            self.summary[type].append(n)
 
         self.count_tweet_activity()
+
+    def get_activity(self):
+        self.hot_hashtag_num = max(Counter(self.tweet_hashtag).values())
+        #get original urls
+        self.o_urls = []
+        #for s_url in self.tweet_url:
+        #    try:
+        #        print s_url
+        #        ori_url = requests.get(s_url, timeout=2).url
+        #        print "2", ori_url
+        #        ori_url = ori_url.split('#')[0]
+        #        self.o_urls.append(ori_url)
+        #    except:
+        #        #add the original url to url list
+        #        self.o_urls.append(s_url)
+        #        continue
+        self.hot_url_num = max(Counter(self.tweet_url).values())
 
     def analysis(self):
         self.get_net_density()
         self.get_num_nodes()
         self.get_num_edges()
         self.get_num_weakly()
+        self.run_summary()
+        self.get_activity()
 
         self.analysis_summary = {
+            "tweet_num": self.tweet_num,
+            "retweet_num": self.retweet_num,
+            "tweet_hash_num": self.tweet_hashtag_num,
+            "tweet_url_num": self.tweet_url_num,
+            "tweet_mens_num": self.tweet_mens_num,
+            "hot_hash_tag": self.hot_hashtag_num,
+            "hot_url": self.hot_url_num,
             "node_num": self.num_nodes,
             "edge_num": self.num_edges,
             "weakly_componnet_num": self.num_weakly_components,
