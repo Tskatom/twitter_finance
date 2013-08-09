@@ -26,13 +26,14 @@ CONTENT_FEATURE_ORDER = ['tweet_num', 'retweet_num', 'mention_num',
                          'top_hashtag', 'top_organization', 'top_nation']
 
 RULE = {"t": "content", "c": "comprehend", "u": "user2user"}
+ORDER_RULE = {"t": CONTENT_FEATURE_ORDER, "c": FEATURE_ORDER}
 
 
-def filter_regular_day(country, lag=1):
+def filter_regular_day(country, train_start, train_end, lag=1):
     conn = lite.connect('/home/vic/work/data/embers_v.db')
     sql = "select event_date from gsr_event where event_code"
     sql += " in ('0411', '0412') and "
-    sql += " country = '%s' and event_date >= '2012-12-01' " % country
+    sql += " country = '%s' and event_date >= '%s'  and event_date < '%s'" % (country, train_start, train_end)
     cursor = conn.cursor()
     rs = cursor.execute(sql)
     days = [r[0] for r in rs]
@@ -55,7 +56,7 @@ def get_previous_feature(country, day, net_type, max_lag=10):
                 ds = [json.loads(l) for l in r]
                 for d in ds:
                     if d["country"] == country:
-                        features = [d[k] for k in FEATURE_ORDER]
+                        features = [d[k] for k in ORDER_RULE[net_type]]
             break
         count += 1
     return features
@@ -75,7 +76,7 @@ def construct_dataset(country, train_start, train_end, test_start, test_end, net
     path = "/media/datastorage/graph_analysis/" + RULE[net_type] + "/tweet_finance_analysis_%s"
     s_train_date = train_start
     e_train_date = train_end
-    anomaly_days = filter_regular_day(country, lag)
+    anomaly_days = filter_regular_day(country, train_start, train_end, lag)
     regular_days = []
     temp_s_date = datetime.strptime(s_train_date, "%Y-%m-%d")
     temp_e_date = datetime.strptime(e_train_date, "%Y-%m-%d")
@@ -97,8 +98,8 @@ def construct_dataset(country, train_start, train_end, test_start, test_end, net
                     data = json.loads(l)
                     if country == data["country"]:
                         #extract information
-                        tmd = [data[k] for k in FEATURE_ORDER]
-                        p_feature = get_previous_feature(country, d)
+                        tmd = [data[k] for k in ORDER_RULE[net_type]]
+                        p_feature = get_previous_feature(country, d, net_type)
                         diff = compute_diff(p_feature, tmd)
                         datas.append(diff)
                         train_days.append(d)
@@ -122,8 +123,8 @@ def construct_dataset(country, train_start, train_end, test_start, test_end, net
                 for l in r:
                     data = json.loads(l)
                     if country == data["country"]:
-                        tmd = [data[k] for k in FEATURE_ORDER]
-                        p_feature = get_previous_feature(country, d_str)
+                        tmd = [data[k] for k in ORDER_RULE[net_type]]
+                        p_feature = get_previous_feature(country, d_str, net_type)
                         diff = compute_diff(p_feature, tmd)
                         test_datas.append(diff)
                         test_days.append(data["date"])
@@ -161,8 +162,9 @@ def main():
         test_file = "/media/datastorage/experiment/" + RULE[arg.net]
         test_file += "/%s_test" % country.replace(" ", "")
 
+
         with open(train_file, "w") as train, open(test_file, "w") as test:
-            for i in range(len(train_days)):
+            for i in range(1, len(train_days)):
                 t_str = train_days[i] + " "
                 t_str += " ".join(map(str, train_data[i])) + "\n"
                 train.write(t_str)

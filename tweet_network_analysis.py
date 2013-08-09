@@ -42,7 +42,7 @@ class Netsis:
             "tweet_num": tweet_num,
             "retweet_num": retweet_num,
             "mention_num": mention_num,
-            "density": self.network_density,
+            "density": self.density,
             "component_num": conn_component_num,
             "top_url": self.entity_vol["IDENTIFIER:URL"],
             "top_person": self.entity_vol["PERSON"],
@@ -54,8 +54,8 @@ class Netsis:
 
     def get_node_num(self, node_type):
         count = 0
-        for node in self.g.node:
-            if node_type == node["type"]:
+        for node, d in self.g.nodes_iter(data=True):
+            if node_type == d["type"]:
                 count += 1
         return count
 
@@ -67,21 +67,20 @@ class Netsis:
                 count += 1
         return count
 
-    def load_graph(self, read_func, graph_file, net_type):
+    def load_graph(self, read_func, graph_file):
         self.g = read_func(graph_file)
         self.nodes = self.g.nodes()
         self.summary = {}
         self.country = self.g.graph["country"]
         self.date = self.g.graph["date"]
-        self.net_type = net_type
         self.entity_vol = {}
 
     def top_k_entity_volume(self, k, entity_type):
-        count = []
-        for node in self.g.node:
-            if node.type == entity_type:
+        count = [0.0]
+        for node, d in self.g.nodes_iter(data=True):
+            if d["type"] == entity_type:
                 count.append(self.g.degree(node))
-        count.sorted(reverse=True)
+        count.sort(reverse=True)
         self.entity_vol[entity_type] = np.mean(count[0:k])
 
     def count_tweet_activity(self):
@@ -183,13 +182,37 @@ def analysis_by_file(graph_file, out_folder, net_type="t"):
         tf.write("%s\n" % json.dumps(result, ensure_ascii=False))
 
 
-def analysis_by_folder(in_folder, out_folder):
+def check_filetype(filename, net_type):
+    if net_type == "t":
+        rule = "content"
+    elif net_type == "c":
+        rule = "comprehend"
+    elif net_type == "u":
+        rule = "user2user"
+    else:
+        return False
+    match = re.search(rule, filename)
+    if match:
+        return True
+    return False
+
+
+def analysis_by_folder(in_folder, out_folder, net_type="t"):
+    if net_type == "t":
+        out_folder = os.path.join(out_folder, "content")
+    elif net_type == "c":
+        out_folder = os.path.join(out_folder, "comprehend")
+    elif net_type == "u":
+        out_folder = os.path.join(out_folder, "user2user")
+    if not os.path.exists(out_folder):
+        os.mkdir(out_folder)
+
     files = os.listdir(in_folder)
     for f in files:
         full_f = os.path.join(in_folder, f)
-        if not os.path.isfile(full_f):
+        if (not os.path.isfile(full_f)) or (not check_filetype(f, net_type)):
             continue
-        analysis_by_file(full_f, out_folder)
+        analysis_by_file(full_f, out_folder, net_type)
 
 
 def main():
@@ -199,6 +222,8 @@ def main():
     ap.add_argument("--inf", type=str, help="graph files folder")
     ap.add_argument("--files", type=str,
                     nargs='+', help="file list")
+    ap.add_argument("--net", type=str)
+    ap.add_argument("--c_folder", type=str)
     arg = ap.parse_args()
     assert arg.out, "Please Enter a output dir"
     if arg.inf:
@@ -207,10 +232,12 @@ def main():
             full_f = os.path.join(arg.inf, folder)
             if not os.path.isdir(full_f):
                 continue
-            analysis_by_folder(full_f, arg.out)
+            analysis_by_folder(full_f, arg.out,  arg.net)
     elif arg.files:
         for f in arg.files:
-            analysis_by_file(f, arg.out)
+            analysis_by_file(f, arg.out, arg.net)
+    elif arg.c_folder:
+        analysis_by_folder(arg.c_folder, arg.out, arg.net)
 
 
 if __name__ == "__main__":
