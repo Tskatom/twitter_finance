@@ -8,8 +8,8 @@ import sqlite3 as lite
 from datetime import datetime, timedelta
 import json
 import numpy as np
-from sklearn import svm
 import os
+import argparse
 
 
 COUNTRY = ['Argentina', 'Brazil', 'Chile', 'Colombia',
@@ -24,6 +24,8 @@ CONTENT_FEATURE_ORDER = ['tweet_num', 'retweet_num', 'mention_num',
                          'density', 'component_num', 'top_url',
                          'top_person', 'top_product', 'top_location',
                          'top_hashtag', 'top_organization', 'top_nation']
+
+RULE = {"t": "content", "c": "comprehend", "u": "user2user"}
 
 
 def filter_regular_day(country, lag=1):
@@ -40,13 +42,14 @@ def filter_regular_day(country, lag=1):
     return lag_days
 
 
-def get_previous_feature(country, day, max_lag=10):
+def get_previous_feature(country, day, net_type, max_lag=10):
+    path = "/media/datastorage/graph_analysis/" + RULE[net_type] + "/tweet_finance_analysis_%s"
     count = 1
     day = datetime.strptime(day, "%Y-%m-%d")
     features = []
     while count < max_lag:
         day_str = (day - timedelta(days=count)).strftime("%Y-%m-%d")
-        g_file = "/media/2488-4033/data/graph_analysis/tweet_finance_analysis_%s" % day_str
+        g_file = path % day_str
         if os.path.exists(g_file):
             with open(g_file, "r") as r:
                 ds = [json.loads(l) for l in r]
@@ -68,9 +71,10 @@ def compute_diff(last, curr):
     return diff
 
 
-def construct_dataset(country, lag=1):
-    s_train_date = "2012-12-15"
-    e_train_date = "2013-05-01"
+def construct_dataset(country, train_start, train_end, test_start, test_end, net_type, lag=1):
+    path = "/media/datastorage/graph_analysis/" + RULE[net_type] + "/tweet_finance_analysis_%s"
+    s_train_date = train_start
+    e_train_date = train_end
     anomaly_days = filter_regular_day(country, lag)
     regular_days = []
     temp_s_date = datetime.strptime(s_train_date, "%Y-%m-%d")
@@ -83,9 +87,10 @@ def construct_dataset(country, lag=1):
     print "Country: %s Traning Regular days: %d, Anormaly days: %d" \
         % (country, len(regular_days), len(anomaly_days))
     datas = []
+    train_days = []
     #generate training dataset
     for d in regular_days:
-        g_file = "/media/2488-4033/data/graph_analysis/tweet_finance_analysis_%s" % d
+        g_file = path % d
         try:
             with open(g_file, "r") as r:
                 for l in r:
@@ -96,20 +101,21 @@ def construct_dataset(country, lag=1):
                         p_feature = get_previous_feature(country, d)
                         diff = compute_diff(p_feature, tmd)
                         datas.append(diff)
+                        train_days.append(d)
         except:
             continue
 
     #generate test dataset
     test_datas = []
     test_days = []
-    test_start = "2013-05-01"
-    test_end = "2013-07-31"
+    test_start = test_start
+    test_end = test_end
 
     temp_s_date = datetime.strptime(test_start, "%Y-%m-%d")
     temp_e_date = datetime.strptime(test_end, "%Y-%m-%d")
     while temp_s_date <= temp_e_date:
         d_str = temp_s_date.strftime("%Y-%m-%d")
-        g_file = "/media/2488-4033/data/graph_analysis/tweet_finance_analysis_%s" % d_str
+        g_file = path % d_str
         temp_s_date += timedelta(days=1)
         try:
             with open(g_file, "r") as r:
@@ -124,32 +130,48 @@ def construct_dataset(country, lag=1):
         except Exception:
             continue
 
-    return np.array(datas), np.array(test_datas), np.array(test_days)
+    return np.array(train_days), np.array(datas), np.array(test_datas), np.array(test_days)
 
 
-def model_test():
+def parse_arg():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--net", type=str)
+    ap.add_argument("--train_start", type=str)
+    ap.add_argument("--train_end", type=str)
+    ap.add_argument("--test_start", type=str)
+    ap.add_argument("--test_end", type=str)
+    ap.add_argument("--lag", type=int)
+    return ap.parse_args()
+
+
+def main():
+    arg = parse_arg()
     for country in COUNTRY:
-        train, test, test_days = construct_dataset(country, 1)
+        train_days, train_data, test_data, test_days = construct_dataset(country,
+                                                                         arg.train_start,
+                                                                         arg.train_end,
+                                                                         arg.test_start,
+                                                                         arg.test_end,
+                                                                         arg.net,
+                                                                         arg.lag)
+        #output ot file
+        train_file = "/media/datastorage/experiment/" + RULE[arg.net]
+        train_file += "/%s_train" % country.replace(" ", "")
 
-        #normalize data
-        mean = train.mean(axis=0)
-        std = train.std(axis=0)
-        norm_train = (train - mean) / std
-        norm_test = (test - mean) / std
+        test_file = "/media/datastorage/experiment/" + RULE[arg.net]
+        test_file += "/%s_test" % country.replace(" ", "")
 
-        clf = svm.OneClassSVM(nu=0.1, kernel='rbf', gamma=0.125)
-        clf.fit(norm_train)
+        with open(train_file, "w") as train, open(test_file, "w") as test:
+            for i in range(len(train_days)):
+                t_str = train_days[i] + " "
+                t_str += " ".join(map(str, train_data[i])) + "\n"
+                train.write(t_str)
 
-        #evaluation
-        test_pred = clf.predict(norm_test)
-        num_anor = test_pred[test_pred == -1].size
-
-        print "Country: %s , total: %d, anorm: %d, ratio: %0.4f" \
-            % (country, test_pred.size, num_anor,
-               1.0 * num_anor / test_pred.size)
-        print "anomaly days:", test_days[test_pred == -1]
-        print "\n"
+            for i in range(len(test_days)):
+                t_str = test_days[i] + " "
+                t_str += " ".join(map(str, test_data[i])) + "\n"
+                test.write(t_str)
 
 
 if __name__ == "__main__":
-    model_test()
+    main()
