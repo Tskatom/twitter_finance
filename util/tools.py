@@ -93,5 +93,29 @@ def extract_users(tweet_file, user_file):
 
     return users
 
+
+def combine_country_market(c_file, m_file, out_file, merge_file):
+    country_users = json.load(open(c_file))
+    market_users = json.load(open(m_file))
+    users = []
+    for country, us in country_users.items():
+        users.extend(us)
+    for market, us in market_users.items():
+        users.extend(us)
+
+    users = list(set(users))
+    with open(out_file, "w") as w:
+        for id in users:
+            w.write(json.dumps({"id": int(id)}) + "\n")
+
+    #merge users
+    for k in country_users:
+        if k in market_users:
+            country_users[k].extend(market_users[k])
+            country_users[k] = list(set(country_users[k]))
+
+    with open(merge_file, "w") as w:
+        w.write(json.dumps(country_users))
+
 if __name__ == "__main__":
     pass

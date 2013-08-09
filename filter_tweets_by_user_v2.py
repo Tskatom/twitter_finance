@@ -49,14 +49,19 @@ def parse_arg():
                     type=str, help='User file')
     ap.add_argument('--folder', type=str,
                     help="tweets folder")
+    ap.add_argument('--month', type=str)
     arg = ap.parse_args()
     return arg
 
 
 def main():
     arg = parse_arg()
+    assert arg.month, "Please enter the month"
+
     tweetFilter = Filter(arg.user_file)
-    out_dir = "/media/2488-4033/data/filter/total"
+    out_dir = "/media/datastorage/filter/new_total/" + arg.month
+    if not os.path.exists(out_dir):
+        os.mkdir(out_dir)
 
     if arg.cat:
         #input from stdin

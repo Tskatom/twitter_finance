@@ -10,6 +10,7 @@ import re
 import numpy as np
 import json
 from etool import args
+from numpy.linalg import norm
 
 FEATURE_ORDER = ['net_density', 'node_num', 'weakly_componnet_num',
                  'edge_num', 'tweet_num', 'retweet_num',
@@ -64,19 +65,18 @@ class Detector:
 #        print "c_min", c_min
 #        print "c_matrix", c_matrix
         c_matrix = (c_matrix - c_min) / (c_max - c_min)
-        #transfer the matrix to unit matrix
-        c_matrix = trans2unit(c_matrix)
         tar_v = c_matrix[0]
         past_v = c_matrix[1:].sum(axis=0) / c_matrix[1:].shape[0]
-        z = compare_similarity(tar_v, past_v)
-        return z
+        z_value, diff_mag = compare_similarity(compare, tar_v, past_v)
+        return z_value, diff_mag
 
     def detect(self):
         for country in COUNTRY:
             tf = self.result + "_" + country.replace(" ", "")
-            z = self.process(country)
+            z_value, diff_mag = self.process(country)
             with open(tf, "a") as w:
-                r_str = "%s|%s|%0.4f\n" % (self.target_day, country, z)
+                r_str = "%s|%s|%0.4f|%0.4f\n"\
+                    % (self.target_day, country, z_value, diff_mag)
                 w.write(r_str)
 
 
@@ -87,10 +87,20 @@ def trans2unit(c_matrix):
     return c_matrix
 
 
-def compare_similarity(tar_v, past_v):
-    #z = 1 - tar_v * past_v', if tart_v and past_v is the same
-    #then z = 0 and the higher z means hihger difference
-    z = 1 - np.dot(tar_v, past_v)
+def compare(tar_v, past_v):
+    #compare the orientation and magnitude
+    t_len = norm(tar_v)
+    p_len = norm(past_v)
+    ori_dif = 1 - tar_v.dot(past_v) / (t_len * p_len)
+    #because each item in vector has been normalize dot [0,1]
+    #so the maximum magnitude would be sqrt(number of items)
+    mat_diff = (t_len - p_len) / np.sqrt(tar_v.shape[0])
+    total_diff = (ori_dif + np.abs(mat_diff)) / 2
+    return total_diff, mat_diff
+
+
+def compare_similarity(cmp_func, tar_v, past_v):
+    z = cmp_func(tar_v, past_v)
     return z
 
 
@@ -111,7 +121,7 @@ def main():
     arg = ap.parse_args()
 
     start_date = "2012-12-08"
-    end_date = "2013-02-28"
+    end_date = "2013-05-31"
     dates = date_seed(start_date, end_date)
     for d in dates:
         detector = Detector(d, arg.window, arg.filedir, arg.result)

@@ -7,7 +7,7 @@ __email__ = "tskatom@vt.edu"
 import redis
 import re
 import json
-
+import os
 
 COUNTRY = {"Panamá": "Panama", "América": "Latin America",
            "Perú": "Peru", "México": "Mexico", "Brasil": "Brazil"}
@@ -40,7 +40,7 @@ def extract_user(tweet):
     return ids
 
 
-def extract():
+def extract(flag="country"):
     r = redis.Redis()
     keys = r.keys()
     #divide the country into two groups: costa rica and others
@@ -66,7 +66,12 @@ def extract():
         users[u] = list(set(users[u]))
 
     user_file = "/home/vic/workspace/twitter_finance/dictionary/"
-    user_file += "eco_user_by_country.txt"
+    if not os.path.exists(user_file):
+        user_file = "/home/vic/work/twitter_finance/dictionary/"
+    if flag == "country":
+        user_file += "eco_user_by_country.txt"
+    elif flag == "market":
+        user_file += "eco_user_by_market.txt"
     with open(user_file, "w") as w:
         w.write(json.dumps(users))
 

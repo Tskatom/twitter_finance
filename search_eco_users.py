@@ -16,20 +16,28 @@ MAX_PAGES = 10
 #COUNTRY = ['México', 'Panamá', 'Brasil', 'Colombia',
 #           'Perú', 'Venezuela', 'Argentina', 'Chile', 'América Latina']
 COUNTRY = ['Chile', 'América Latina', 'Argentina']
+INDEX_COUNTRY = {"MERVAL": "Argentina", "MEXBOL": "Mexico",
+                 "CRSMBCT": "Costa Rica",
+                 "BVPSBVPS": "Panama", "IBVC": "Venezuela",
+                 "COLCAP": "Colombia", "CHILE65": "Chile",
+                 "IGBVL": "Peru", "IBOV": "Brazil"}
 
 
-def search_tweets(t, r, keywords):
+def get_country_by_index(index):
+    return INDEX_COUNTRY[index]
+
+
+def search_tweets(t, r, keywords, level="country"):
  #   redisId = tu.getRedisIdByScreenName(keywords, 'index')
-    redisTweetId = tu.getRedisIdByScreenName(keywords, 'search')
+    if level == "country":
+        index_name = keywords
+    else:
+        index_name = "%s %s" % (level, keywords)
+    redisTweetId = tu.getRedisIdByScreenName(index_name, 'search')
     params = {"q": keywords,
               "count": 100}
- #   if last_since_id:
- #       params["since_id"] = last_since_id
     search_results = tu.makeTwitterRequest(t.search.tweets, **params)
     tweets = search_results['statuses']
-    #get the since_id
-#    since_id = search_results['search_metadata']['max_id_str']
-#    r.set(redisId, since_id)
 
     for i in range(MAX_PAGES - 1):
         print "page %d" % (i + 1)
@@ -50,6 +58,26 @@ def search_tweets(t, r, keywords):
     for t in tweets:
         r.sadd(redisTweetId, t)
     return tweets
+
+
+def filter_market_tweet():
+    t = login()
+    r = redis.Redis()
+
+    #load company rules
+    rule_file = "/home/vic/work/twitter_finance/dictionary/company_rule.txt"
+    stock_rule = json.load(open(rule_file))
+    for index in stock_rule:
+        country = get_country_by_index(index)
+        ks = []
+        ks.extend(stock_rule[index]["index"])
+        for company, rs in stock_rule[index]["company"].items():
+            rule = rs[0].replace("*", "")
+            if len(rule) >= 4:
+                ks.append(rule)
+        for keyword in ks:
+            search_tweets(t, r, keyword, country)
+    r.save()
 
 
 def main():

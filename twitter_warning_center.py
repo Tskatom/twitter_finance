@@ -54,6 +54,7 @@ def getTradingDate(t_domain, post_date, country):
 
 def warning_center(t_domain, tweet_analysis, warn_queue, threshold):
     z_value = float(tweet_analysis["z_value"])
+    diff_mag = float(tweet_analysis["diff_mag"])
     country = tweet_analysis["country"]
     t_date = tweet_analysis["date"]
     #setup threashold
@@ -65,7 +66,10 @@ def warning_center(t_domain, tweet_analysis, warn_queue, threshold):
         comment = "Tweet network Model %s Date: %s Z_value: %.4f"\
             % (country, t_date, z_value)
         population = COUNTRY_MARKET.get(country)
-        event_type = "0411"
+        if diff_mag <= 0:
+            event_type = "0412"
+        else:
+            event_type = "0411"
 
         warn.setEventDate(event_date)
         warn.setDerivedFrom(derived_from)
@@ -145,7 +149,7 @@ def get_domain(conn, d_name):
 
 def main():
     ap = args.get_parser()
-    ap.add_argument('--level', type=str,
+    ap.add_argument('--level', type=str, default="0.6",
                     help='The threhold')
     arg = ap.parse_args()
 

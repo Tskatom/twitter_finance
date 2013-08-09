@@ -16,8 +16,12 @@ import re
 COUNTRY = ["Argentina", "Brazil", "Chile", "Colombia", "Costa Rica",
            "Peru", "Panama", "Mexico", "Venezuela"]
 
+ENTITIES = ['PRODUCT', 'IDENTIFIER:URL', 'TWITTER:HASHTAG',
+            'PERSON', 'IDENTIFIER:MONEY', 'TWITTER:USERNAME',
+            'NATIONALITY', 'ORGANIZATION', 'LOCATION']
 
-def load_file(tweet_file):
+
+def comprehend_network(tweet_file):
     net = nx.DiGraph()
     with open(tweet_file, 'r') as t_r:
         i = 0
@@ -80,42 +84,133 @@ def load_file(tweet_file):
                 net.add_edge(replied_id, tweet_id, type="REPLIED")
 
             #extract mention info
-            if "mentions" in tweet['twitter']:
-                mentions = tweet['twitter']['mentions']
+            if "mentions" in tweet['interaction']:
+                mentions = tweet['interaction']['mentions']
                 for user in mentions:
                     net.add_node(user, type='USER')
                     net.add_edge(tweet_id, user, type='MENTION')
     return net
 
 
-def handle_by_folder(in_dir, out_dir, country):
+def update_edge(net, node1, node2, weight=False):
+    if not weight:
+        net.add_edge(node1, node2)
+        return True
+
+    if net.has_edge(node1, node2):
+        old_weight = net.get_edge_data(node1, node2).get('weight')
+        new_weight = old_weight + 1
+    else:
+        new_weight = 1
+
+    net.add_weighted_edges_from([(node1, node2, new_weight)])
+    return True
+
+
+def user2user_network(tweet_file):
+    net = nx.DiGraph()
+    #construct network based on user to user
+    #node: user, edge: retweet, mention and reply
+    #direction: from information source to destination
+    with open(tweet_file, "r") as r:
+        for line in r:
+            tweet = json.loads(line)
+            #extract user information
+            user_name = tweet['interaction']['author']['username']
+            net.add_node(user_name, type="USER")
+
+            #extract retweet info
+            if "retweeted" in tweet['twitter']:
+                origin_user = tweet['twitter'].get('retweeted')\
+                    .get('user').get('screen_name')
+                net.add_node(origin_user, type="USER")
+                update_edge(net, origin_user, user_name, True)
+            #extract mention info
+            if "mentions" in tweet["twitter"]:
+                mentions = tweet["twitter"]["mentions"]
+                for user in mentions:
+                    net.add_node(user, type="USER")
+                    update_edge(net, user_name, user, True)
+    return net
+
+
+def content_based_network(tweet_file):
+    """
+    construct undirected network based on the relation between tweet and tweet
+    Node: tweet, url, hashtag, location, product, person, identifier:money,
+    twitter:username, nationality, organization
+    edges: retweet(tweet to tweet), mention(tweet to user),
+    cited(tweet to other entity)
+    """
+    net = nx.Graph()
+    with open(tweet_file) as tf:
+        for line in tf:
+            tweet = json.loads(line)
+            tweet_id = tweet['twitter']['id']
+            tweet_content = tweet['interaction']['content']
+            net.add_node(tweet_id, type="TWEET", content=tweet_content)
+
+            entities = tweet["BasisEnrichment"]["entities"]
+
+            for entity in entities:
+                neType = entity["neType"]
+                value = entity["expr"]
+                if neType == "TWITTER:USERNAME":
+                    net.add_node(value, type=neType)
+                    net.add_edge(tweet_id, value, type="MENTION")
+                else:
+                    if neType in ENTITIES:
+                        net.add_node(value, type=neType)
+                        net.add_edge(tweet_id, value, type="CITED")
+            #extract retweet info
+            if "retweeted" in tweet['twitter']:
+                ori_tweet_id = tweet['twitter']["retweeted"]["id"]
+                net.add_node(ori_tweet_id, type="TWEET", content=tweet_content)
+                net.add_edge(ori_tweet_id, tweet_id, type="RETWEET")
+    return net
+
+
+def handle_by_folder(in_dir, out_dir, country, net_func=comprehend_network):
     files = os.listdir(in_dir)
 
     for f in files:
         full_f = os.path.join(in_dir, f)
         if not os.path.isfile(full_f):
             continue
-        handle_by_file(out_dir, full_f, country)
+        handle_by_file(out_dir, full_f, country, net_func)
 
 
-def handle_by_file(out_dir, tweet_file, country):
+def handle_by_file(out_dir, tweet_file, country, net_func=comprehend_network):
     try:
         if not os.path.exists(out_dir):
             os.makedirs(out_dir)
 
-        net = load_file(tweet_file)
+        if net_func == comprehend_network:
+            net_type = "comprehend"
+        elif net_func == user2user_network:
+            net_type = "user2user"
+        elif net_func == content_based_network:
+            net_type = "content"
+        else:
+            net_type = "normal"
+
+        net = net_func(tweet_file)
         net.graph["country"] = country
         g_date = re.search(r'\d{4}-\d{2}-\d{2}', tweet_file).group()
         net.graph["date"] = g_date
         out_file = os.path.join(out_dir,
-                                "graph_" + tweet_file.split(os.sep)[-1])
+                                "graph_%s_%s" % (net_type,
+                                                 tweet_file.split(os.sep)[-1]))
         nx.write_gpickle(net, out_file + ".gpickle")
         nx.write_graphml(net, out_file + ".graphml")
-    except:
-        print "Error Encoutered: %s, \n %s" % (tweet_file, sys.exc_info()[0])
+    except Exception, e:
+        print "Error Encoutered: %s, \n %s" \
+            % (tweet_file, sys.exc_info()[0]), e
 
 
 def main():
+    NET_TYPE = {"c": comprehend_network, "u": user2user_network,
+                "t": content_based_network}
     ap = args.get_parser()
     ap.add_argument('--out', type=str, help='graph output folder',
                     default='./')
@@ -123,11 +218,14 @@ def main():
     ap.add_argument('--infiles', type=str, nargs='+',
                     help='list of files to be handled')
     ap.add_argument('--c', type=str, nargs='+',
-                    help='list of files to be handled')
+                    help='list of country')
     ap.add_argument('--dirf', type=str,
                     help='The folder directly to he handled')
+    ap.add_argument('--net', type=str,
+                    help="type of network,each symbol represent each type:c")
     arg = ap.parse_args()
 
+    assert arg.net, "Please input a network type"
     if arg.c and len(arg.c) > 0:
         country_list = arg.c
     else:
@@ -138,12 +236,19 @@ def main():
             in_folder = os.path.join(arg.inf, country.replace(" ", ""))
             out_folder = os.path.join(arg.out, "graph")
             out_folder = os.path.join(out_folder, country.replace(" ", ""))
-            handle_by_folder(in_folder, out_folder, country)
+            for t in arg.net:
+                net_type = NET_TYPE.get(t)
+                handle_by_folder(in_folder, out_folder, country, net_type)
     elif arg.infiles:
             for f in arg.infiles:
-                handle_by_file(arg.out, f, country_list[0])
+                for t in arg.net:
+                    net_type = NET_TYPE.get(t)
+                    handle_by_file(arg.out, f, country_list[0], net_type)
     elif arg.dirf:
-        handle_by_folder(arg.dirf, arg.out, country_list[0])
+        for t in arg.net:
+            net_type = NET_TYPE.get(t)
+            handle_by_folder(arg.dirf, arg.out, country_list[0], net_type)
+
 
 if __name__ == "__main__":
     main()

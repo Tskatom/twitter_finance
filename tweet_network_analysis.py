@@ -10,35 +10,79 @@ import json
 import os
 from etool import args
 from collections import Counter
+import numpy as np
 
 
 class Netsis:
-    #Activity feature list
-    #number of re-tweets in G
-    #number of tweets in G
-    #number of tweets that mentions users in G
-    #number of hashtags used in all tweets in G
-    #number of tweets with URLs in G
-    #average tweets being sent per user
-    #the hotest hashtag
-    #the hotest url
-    #the hostest retweet
+    def __init__(self, net_type):
+        self.net_type = net_type
+        self.net_switch = {"t": self.content_net_analysis,
+                           "c": self.comprehend_analysis}
 
-    #Graph feature list
-    #number of nodes in G
-    #number of edges in G
-    #number of connected components in G
-    #network density
+    def content_net_analysis(self):
+        self.entity_list = ["IDENTIFIER:URL", "TWITTER:USERNAME",
+                            "PERSON", "PRODUCT", "LOCATION",
+                            "TWITTER:HASHTAG", "ORGANIZATION",
+                            "NATIONALITY"]
+        #get number of tweets
+        tweet_num = self.get_node_num("TWEET")
+        retweet_num = self.get_edge_num("RETWEET")
+        mention_num = self.get_edge_num("MENTION")
+        #get average volume of top k entities
+        for entity in self.entity_list:
+            self.top_k_entity_volume(5, entity)
+        #get connected component
+        conn_component_num = len(nx.connected_components(self.g))
+        #get network density
+        self.get_net_density()
+        #summary
+        self.analysis_summary = {
+            "country": self.g.graph["country"],
+            "date": self.g.graph["date"],
+            "tweet_num": tweet_num,
+            "retweet_num": retweet_num,
+            "mention_num": mention_num,
+            "density": self.network_density,
+            "component_num": conn_component_num,
+            "top_url": self.entity_vol["IDENTIFIER:URL"],
+            "top_person": self.entity_vol["PERSON"],
+            "top_product": self.entity_vol["PRODUCT"],
+            "top_location": self.entity_vol["LOCATION"],
+            "top_hashtag": self.entity_vol["TWITTER:HASHTAG"],
+            "top_organization": self.entity_vol["ORGANIZATION"],
+            "top_nation": self.entity_vol["NATIONALITY"]}
 
-    def __init__(self, model):
-        self.model = model
+    def get_node_num(self, node_type):
+        count = 0
+        for node in self.g.node:
+            if node_type == node["type"]:
+                count += 1
+        return count
 
-    def load_graph(self, read_func, graph_file):
+    def get_edge_num(self, edge_type):
+        count = 0
+        "TODO: network failed to store type attribute for retweet edge"
+        for u, v, d in self.g.edges_iter(data=True):
+            if "type" not in d or d["type"] == edge_type:
+                count += 1
+        return count
+
+    def load_graph(self, read_func, graph_file, net_type):
         self.g = read_func(graph_file)
         self.nodes = self.g.nodes()
         self.summary = {}
         self.country = self.g.graph["country"]
         self.date = self.g.graph["date"]
+        self.net_type = net_type
+        self.entity_vol = {}
+
+    def top_k_entity_volume(self, k, entity_type):
+        count = []
+        for node in self.g.node:
+            if node.type == entity_type:
+                count.append(self.g.degree(node))
+        count.sorted(reverse=True)
+        self.entity_vol[entity_type] = np.mean(count[0:k])
 
     def count_tweet_activity(self):
         self.tweet_mention = []
@@ -90,25 +134,16 @@ class Netsis:
             self.hot_hashtag_num = 0
         else:
             self.hot_hashtag_num = max(Counter(self.tweet_hashtag).values())
-        #get original urls
-        #self.o_urls = []
-        #for s_url in self.tweet_url:
-        #    try:
-        #        print s_url
-        #        ori_url = requests.get(s_url, timeout=2).url
-        #        print "2", ori_url
-        #        ori_url = ori_url.split('#')[0]
-        #        self.o_urls.append(ori_url)
-        #    except:
-        #        #add the original url to url list
-        #        self.o_urls.append(s_url)
-        #        continue
         if len(self.tweet_url) == 0:
             self.hot_url_num = 0
         else:
             self.hot_url_num = max(Counter(self.tweet_url).values())
 
     def analysis(self):
+        analysis_func = self.net_switch[self.net_type]
+        analysis_func()
+
+    def comprehend_analysis(self):
         self.get_net_density()
         self.get_num_nodes()
         self.get_num_edges()
@@ -132,12 +167,12 @@ class Netsis:
             "date": self.date}
 
 
-def analysis_by_file(graph_file, out_folder):
+def analysis_by_file(graph_file, out_folder, net_type="t"):
     match = re.search(r'gpickle', graph_file)
     if match is None:
         return
 
-    netsis = Netsis("Tweet_Analysis")
+    netsis = Netsis(net_type)
     netsis.load_graph(nx.read_gpickle, graph_file)
     netsis.analysis()
     result = netsis.analysis_summary

@@ -53,6 +53,57 @@ def filter_by_country(tweet_file, country, source):
     country_file.close()
 
 
+def check_tweets_user(tweet, users):
+    #check author
+    author_id = tweet['interaction']['author']['id']
+    if author_id in users:
+        return True
+
+    #check mentions
+    if "mentions" in tweet['interaction']:
+        mentions = tweet["interaction"]["mention_ids"]
+        for _id in mentions:
+            if _id in users:
+                return True
+
+    #check retweeted
+    if "retweeted" in tweet["twitter"]:
+        o_id = tweet["twitter"]["retweeted"]\
+            .get("user").get("id")
+        if o_id in users:
+            return True
+    return False
+
+
+def filter_by_userbelong(tweet_file, country):
+    country_user_file = "/home/vic/work/twitter_finance/"
+    if not os.path.exists(country_user_file):
+        country_user_file = '/home/vic/workspace/twitter_finance'
+    country_user_file += 'dictionary/country_market_combine_user.txt'
+
+    country_user = json.load(open(country_user_file))
+    users = country_user.get(country)
+    users = map(int, users)
+    #combine tweet_file by date
+    out_dir = "/media/datastorage/filter/country/" + country.replace(" ", "")
+    if not os.path.exists(out_dir):
+        os.mkdir(out_dir)
+    t_date = re.search(r'\d{4}-\d{2}-\d{2}', tweet_file).group()
+    out_file = "%s_%s" % (country.replace(" ", ""), t_date)
+    out_file = os.path.join(out_dir, out_file)
+
+    with open(tweet_file) as r, open(out_file, "a") as a:
+        match_tweets = []
+        for l in r:
+            tweet = json.loads(l)
+            if check_tweets_user(tweet, users):
+                match_tweets.append(tweet)
+        print tweet_file
+        for t in match_tweets:
+            a.write(json.dumps(t, ensure_ascii=False).encode('utf-8') + "\n")
+        a.flush()
+
+
 def main():
     ap = args.get_parser()
     ap.add_argument('--folder', type=str, help='the file folder')
@@ -63,21 +114,21 @@ def main():
                     default='datasift')
     arg = ap.parse_args()
 
-    if len(arg.country) > 0:
+    if arg.country is not None:
         country_list = arg.country
     else:
         country_list = COUNTRY
 
     if arg.file:
         for country in country_list:
-            filter_by_country(arg.file, country, arg.source)
+            filter_by_userbelong(arg.file, country)
     elif arg.folder:
         files = os.listdir(arg.folder)
         for f in files:
             f = os.path.join(arg.folder, f)
             if os.path.isfile(f):
                 for country in country_list:
-                    filter_by_country(f, country, arg.source)
+                    filter_by_userbelong(f, country)
 
 if __name__ == "__main__":
     main()
