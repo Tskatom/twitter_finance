@@ -40,7 +40,7 @@ def checkTradingDay(t_domain, t_date, country):
 
 def getTradingDate(t_domain, post_date, country):
     event_date = datetime.strptime(post_date, "%Y-%m-%d") + \
-        timedelta(days=3)
+        timedelta(days=1)
     i = 0
     while True:
         str_date = datetime.strftime(event_date, "%Y-%m-%d")
@@ -83,6 +83,31 @@ def warning_center(t_domain, tweet_analysis, warn_queue, threshold):
 
         warn.generateIdDate()
         warn.send(warn_queue)
+
+
+def svm_warning(t_domain, tweet_analysis, warn_queue):
+    country = tweet_analysis["country"]
+    t_date = tweet_analysis["date"]
+    event_date = getTradingDate(t_domain, t_date, country)
+    probability = .6
+    derived_from = {"derivedIds": []}
+    comment = "Twiiter SVM Anormaly Detection Model"
+    population = COUNTRY_MARKET.get(country)
+    event_type = "0411"
+
+    warn = warning("Tweet Network Model Econo")
+
+    warn.setEventDate(event_date)
+    warn.setDerivedFrom(derived_from)
+    warn.setPopulation(population)
+    warn.setProbability(probability)
+    warn.setEventType(event_type)
+    warn.setComments(comment)
+    warn.setLocation(country)
+    #Test ----
+    warn.setDate(t_date)
+    warn.generateIdDate()
+    warn.send(warn_queue)
 
 
 class warning():
@@ -151,6 +176,7 @@ def main():
     ap = args.get_parser()
     ap.add_argument('--level', type=str, default="0.6",
                     help='The threhold')
+    ap.add_argument('--svm', action='store_true')
     arg = ap.parse_args()
 
     logs.init(arg)
@@ -163,7 +189,10 @@ def main():
     with queue.open(arg.sub, 'r') as inq:
         for m in inq:
             try:
-                warning_center(t_domain, m, arg.pub, float(arg.level))
+                if arg.svm:
+                    svm_warning(t_domain, m, arg.pub)
+                else:
+                    warning_center(t_domain, m, arg.pub, float(arg.level))
             except KeyboardInterrupt:
                 log.info('GOT SIGINIT, exiting!')
                 break

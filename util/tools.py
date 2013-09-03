@@ -135,19 +135,20 @@ def compute_zscore(price_file):
         lines = [l.strip() for l in r]
         index = lines[0].split(",")[0].split(" ")[0]
         days = np.array([l.split(",")[0] for l in lines[2:]])
-        day_changes = np.array([float(l.split(",")[1]) - float(l.split(",")[2]) for l in lines[2:]])
+        day_changes = np.array([float(l.split(",")[1]) - float(l.split(",")[2])
+                                for l in lines[2:]])
         z30s = np.zeros(len(days))
         z90s = np.zeros(len(days))
         for i in range(1, len(days)):
             end = i - 1
             start = (i - 30) if (i - 30) > 0 else 0
             mean = np.mean(day_changes[start:end])
-            std = np.std(day_changes[start:end])
+            std = np.std(day_changes[start:end], ddof=1)
             z30 = (day_changes[i] - mean) / std
 
             start = (i - 90) if (i - 90) > 0 else 0
             mean = np.mean(day_changes[start:end])
-            std = np.std(day_changes[start:end])
+            std = np.std(day_changes[start:end], ddof=1)
             z90 = (day_changes[i] - mean) / std
 
             z30s[i] = z30
@@ -157,7 +158,6 @@ def compute_zscore(price_file):
     n_z30 = days[z30s <= -4]
     p_z90 = days[z90s >= 3]
     n_z90 = days[z90s <= -3]
-
 
     gsr_p_events = set()
     gsr_n_events = set()
@@ -174,8 +174,9 @@ def compute_zscore(price_file):
     gsr_n_events.sort()
 
     #insert to database
-    conn = lite.connect("/home/vic/workspace/data/embers_v.db")
-    sql = "insert into gsr_event (event_id, country, event_code, population, event_date) values (?, ?, ?, ?, ?)"
+    conn = lite.connect("/home/vic/work/data/embers_v.db")
+    sql = "insert into gsr_event (event_id, country, event_code, "
+    sql + "population, event_date) values (?, ?, ?, ?, ?)"
     cur = conn.cursor()
 
     for i, event in enumerate(gsr_p_events):
@@ -184,7 +185,8 @@ def compute_zscore(price_file):
         event_code = "0411"
         print event_date, event_id
         if event_date >= '2013-07-01':
-            cur.execute(sql, [event_id, country, event_code, index, event_date])
+            cur.execute(sql,
+                        [event_id, country, event_code, index, event_date])
 
     for i, event in enumerate(gsr_n_events):
         event_id = i + 200000
@@ -192,10 +194,13 @@ def compute_zscore(price_file):
         event_code = "0412"
         print event_date, event_id
         if event_date >= "2013-07-01":
-            cur.execute(sql, [event_id, country, event_code, index, event_date])
+            cur.execute(sql,
+                        [event_id, country, event_code, index, event_date])
     conn.commit()
+
+
 def import_gsr_self():
-    dir = "/home/vic/workspace/data/latest_stock/"
+    dir = "/home/vic/work/data/latest_stock/"
     for f in os.listdir(dir):
         f = os.path.join(dir, f)
         print f

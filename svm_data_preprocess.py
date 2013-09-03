@@ -10,7 +10,7 @@ import json
 import numpy as np
 import os
 import argparse
-
+import feature_selection as fs
 
 COUNTRY = ['Argentina', 'Brazil', 'Chile', 'Colombia',
            'Costa Rica', 'Mexico', 'Panama', 'Peru',
@@ -25,15 +25,19 @@ CONTENT_FEATURE_ORDER = ['tweet_num', 'retweet_num', 'mention_num',
                          'top_person', 'top_product', 'top_location',
                          'top_hashtag', 'top_organization', 'top_nation']
 
+USER_FEATURE_ORDER = ['average_weight', 'density', 'node_num',
+                      'average_degree']
+
 RULE = {"t": "content", "c": "comprehend", "u": "user2user"}
-ORDER_RULE = {"t": CONTENT_FEATURE_ORDER, "c": FEATURE_ORDER}
+ORDER_RULE = {"t": CONTENT_FEATURE_ORDER, "c": FEATURE_ORDER,
+              "u": USER_FEATURE_ORDER}
 
 
 def filter_regular_day(country, train_start, train_end, lag=1):
     conn = lite.connect('/home/vic/work/data/embers_v.db')
     sql = "select event_date from gsr_event where event_code"
     sql += " in ('0411', '0412') and "
-    sql += " country = '%s' and event_date >= '%s'  and event_date < '%s'" % (country, train_start, train_end)
+    sql += " country = '%s' and event_date >= '%s'  and event_date <= '%s'" % (country, train_start, train_end)
     cursor = conn.cursor()
     rs = cursor.execute(sql)
     days = [r[0] for r in rs]
@@ -43,7 +47,7 @@ def filter_regular_day(country, train_start, train_end, lag=1):
     return lag_days
 
 
-def get_previous_feature(country, day, net_type, max_lag=10):
+def get_previous_feature(country, day, net_type, feas, max_lag=10):
     path = "/media/datastorage/graph_analysis/" + RULE[net_type] + "/tweet_finance_analysis_%s"
     count = 1
     day = datetime.strptime(day, "%Y-%m-%d")
@@ -56,7 +60,7 @@ def get_previous_feature(country, day, net_type, max_lag=10):
                 ds = [json.loads(l) for l in r]
                 for d in ds:
                     if d["country"] == country:
-                        features = [d[k] for k in ORDER_RULE[net_type]]
+                        features = [d[k] for k in ORDER_RULE[net_type] if k in feas]
             break
         count += 1
     return features
@@ -72,7 +76,9 @@ def compute_diff(last, curr):
     return diff
 
 
-def construct_dataset(country, train_start, train_end, test_start, test_end, net_type, lag=1):
+def construct_dataset(country, train_start, train_end, test_start, test_end, net_type, lag=1, k=7):
+    scores = fs.compute_f1(country, "2012-12-01", "2013-07-31", net_type, lag)
+    feas = [s[0] for s in scores[0:k]]
     path = "/media/datastorage/graph_analysis/" + RULE[net_type] + "/tweet_finance_analysis_%s"
     s_train_date = train_start
     e_train_date = train_end
@@ -98,12 +104,12 @@ def construct_dataset(country, train_start, train_end, test_start, test_end, net
                     data = json.loads(l)
                     if country == data["country"]:
                         #extract information
-                        tmd = [data[k] for k in ORDER_RULE[net_type]]
-                        p_feature = get_previous_feature(country, d, net_type)
-                        diff = compute_diff(p_feature, tmd)
-                        datas.append(diff)
+                        tmd = [data[k] for k in ORDER_RULE[net_type] if k in feas]
+                        p_feature = get_previous_feature(country, d, net_type, feas)
+                        #diff = compute_diff(p_feature, tmd)
+                        datas.append(tmd)
                         train_days.append(d)
-        except:
+        except Exception, e:
             continue
 
     #generate test dataset
@@ -123,12 +129,12 @@ def construct_dataset(country, train_start, train_end, test_start, test_end, net
                 for l in r:
                     data = json.loads(l)
                     if country == data["country"]:
-                        tmd = [data[k] for k in ORDER_RULE[net_type]]
-                        p_feature = get_previous_feature(country, d_str, net_type)
-                        diff = compute_diff(p_feature, tmd)
-                        test_datas.append(diff)
+                        tmd = [data[k] for k in ORDER_RULE[net_type] if k in feas]
+                        p_feature = get_previous_feature(country, d_str, net_type, feas)
+                        #diff = compute_diff(p_feature, tmd)
+                        test_datas.append(tmd)
                         test_days.append(data["date"])
-        except Exception:
+        except Exception, e:
             continue
 
     return np.array(train_days), np.array(datas), np.array(test_datas), np.array(test_days)
@@ -137,11 +143,12 @@ def construct_dataset(country, train_start, train_end, test_start, test_end, net
 def parse_arg():
     ap = argparse.ArgumentParser()
     ap.add_argument("--net", type=str)
-    ap.add_argument("--train_start", type=str)
-    ap.add_argument("--train_end", type=str)
-    ap.add_argument("--test_start", type=str)
-    ap.add_argument("--test_end", type=str)
+    ap.add_argument("--train_start", type=str, default="2012-12-01")
+    ap.add_argument("--train_end", type=str, default="2013-04-30")
+    ap.add_argument("--test_start", type=str, default="2013-05-01")
+    ap.add_argument("--test_end", type=str, default="2013-07-31")
     ap.add_argument("--lag", type=int)
+    ap.add_argument("--k", type=int)
     return ap.parse_args()
 
 
@@ -154,13 +161,14 @@ def main():
                                                                          arg.test_start,
                                                                          arg.test_end,
                                                                          arg.net,
-                                                                         arg.lag)
+                                                                         arg.lag,
+                                                                         arg.k)
         #output ot file
         train_file = "/media/datastorage/experiment/" + RULE[arg.net]
-        train_file += "/%s_train" % country.replace(" ", "")
+        train_file += "/%s_train_%d" % (country.replace(" ", ""), arg.k)
 
         test_file = "/media/datastorage/experiment/" + RULE[arg.net]
-        test_file += "/%s_test" % country.replace(" ", "")
+        test_file += "/%s_test_%d" % (country.replace(" ", ""), arg.k)
 
 
         with open(train_file, "w") as train, open(test_file, "w") as test:

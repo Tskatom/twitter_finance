@@ -134,6 +134,17 @@ def user2user_network(tweet_file):
     return net
 
 
+def get_combination(entities):
+    """
+    get all the combination of two different entities in a list
+    """
+    combinations = []
+    for i in range(len(entities)):
+        for j in range(i + 1, len(entities)):
+            combinations.append((entities[i], entities[j]))
+    return combinations
+
+
 def content_based_network(tweet_file):
     """
     construct undirected network based on the relation between tweet and tweet
@@ -170,14 +181,53 @@ def content_based_network(tweet_file):
     return net
 
 
+def entity_network(tweet_file):
+    """
+    1. construct network based on the entity between entities, if
+    two entities occur in the
+    same tweets, then create a edge between them.
+    2. the weight of edge will add 1 once two entities occur together once
+    """
+    net = nx.Graph()
+    tf = open(tweet_file, "r")
+    for line in tf:
+        tweet = json.loads(line)
+        entities = tweet["BasisEnrichment"]["entities"]
+        #lowercase the entity value
+        entities = [(e["expr"].strip().lower(), e["neType"]) for e in entities]
+        com_entity = get_combination(entities)
+
+        #create node
+        for entity in entities:
+            net.add_node(entity[0], type=entity[1])
+        #create edge pairs
+        entity_edge_pairs = []
+        for pair in com_entity:
+            #get weight of edge:pair format((expr, type), (expr, type))
+            u, v = pair[0], pair[1]
+            edges = net.edge
+            if u[0] not in edges:
+                weight = 0
+            else:
+                weight = edges[u[0]].get(v[0], {"weight": 0}).get("weight", 0)
+            weight += 1
+            entity_edge_pairs.append((u[0], v[0], weight))
+        net.add_weighted_edges_from(entity_edge_pairs)
+    tf.close()
+    return net
+
+
 def handle_by_folder(in_dir, out_dir, country, net_func=comprehend_network):
     files = os.listdir(in_dir)
-
+    count = 0
+    total = len(files)
     for f in files:
         full_f = os.path.join(in_dir, f)
         if not os.path.isfile(full_f):
             continue
         handle_by_file(out_dir, full_f, country, net_func)
+        count += 1
+        print "Finish %d / %d" % (count, total)
 
 
 def handle_by_file(out_dir, tweet_file, country, net_func=comprehend_network):
@@ -191,6 +241,8 @@ def handle_by_file(out_dir, tweet_file, country, net_func=comprehend_network):
             net_type = "user2user"
         elif net_func == content_based_network:
             net_type = "content"
+        elif net_func == entity_network:
+            net_type = "entity"
         else:
             net_type = "normal"
 
@@ -210,7 +262,7 @@ def handle_by_file(out_dir, tweet_file, country, net_func=comprehend_network):
 
 def main():
     NET_TYPE = {"c": comprehend_network, "u": user2user_network,
-                "t": content_based_network}
+                "t": content_based_network, "e": entity_network}
     ap = args.get_parser()
     ap.add_argument('--out', type=str, help='graph output folder',
                     default='./')

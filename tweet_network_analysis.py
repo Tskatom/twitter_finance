@@ -17,7 +17,34 @@ class Netsis:
     def __init__(self, net_type):
         self.net_type = net_type
         self.net_switch = {"t": self.content_net_analysis,
-                           "c": self.comprehend_analysis}
+                           "c": self.comprehend_analysis,
+                           "u": self.user_analysis}
+
+    def user_analysis(self):
+        """
+        number of node, network density, number connected component
+        """
+        node_number = self.get_node_num("USER")
+        total_weight = 0
+        for u, v, d in self.g.edges_iter(data=True):
+            total_weight += d["weight"]
+        average_weight = total_weight / float(len(self.g.edge.keys()))
+
+        #get network density
+        self.get_net_density()
+        #get connected component
+        self.get_num_weakly()
+        #average degree
+        average_degree = sum(self.g.degree().values()) / float(node_number)
+        self.analysis_summary = {
+            "country": self.g.graph["country"],
+            "date": self.g.graph["date"],
+            "node_num": node_number,
+            "average_weight": average_weight,
+            "density": self.density,
+            "average_degree": average_degree,
+            "weakly_componnet_num": self.num_weakly_components
+        }
 
     def content_net_analysis(self):
         self.entity_list = ["IDENTIFIER:URL", "TWITTER:USERNAME",
