@@ -18,7 +18,8 @@ class Netsis:
         self.net_type = net_type
         self.net_switch = {"t": self.content_net_analysis,
                            "c": self.comprehend_analysis,
-                           "u": self.user_analysis}
+                           "u": self.user_analysis,
+                           "e": self.entity_analysis}
 
     def user_analysis(self):
         """
@@ -44,6 +45,31 @@ class Netsis:
             "density": self.density,
             "average_degree": average_degree,
             "weakly_componnet_num": self.num_weakly_components
+        }
+
+    def get_cluster_coefficient(self):
+        try:
+            self.cluster_coefficient = nx.average_clustering(self.g)
+        except:
+            self.cluster_coefficient = 0
+
+    def entity_analysis(self):
+        """
+        number of node, network density, number of connected
+        components, cluster coefficient
+        """
+        entity_num = len(self.g.nodes())
+        #get network density
+        self.get_net_density()
+        #get cluster coefficient
+        self.get_cluster_coefficient()
+
+        self.analysis_summary = {
+            "country": self.g.graph["country"],
+            "date": self.g.graph["date"],
+            "entity_num": entity_num,
+            "density": self.density,
+            "cluster_coefficient": self.cluster_coefficient,
         }
 
     def content_net_analysis(self):
@@ -197,7 +223,6 @@ def analysis_by_file(graph_file, out_folder, net_type="t"):
     match = re.search(r'gpickle', graph_file)
     if match is None:
         return
-
     netsis = Netsis(net_type)
     netsis.load_graph(nx.read_gpickle, graph_file)
     netsis.analysis()
@@ -216,6 +241,8 @@ def check_filetype(filename, net_type):
         rule = "comprehend"
     elif net_type == "u":
         rule = "user2user"
+    elif net_type == "e":
+        rule = "entity"
     else:
         return False
     match = re.search(rule, filename)
@@ -231,6 +258,9 @@ def analysis_by_folder(in_folder, out_folder, net_type="t"):
         out_folder = os.path.join(out_folder, "comprehend")
     elif net_type == "u":
         out_folder = os.path.join(out_folder, "user2user")
+    elif net_type == "e":
+        out_folder = os.path.join(out_folder, "entity")
+
     if not os.path.exists(out_folder):
         os.mkdir(out_folder)
 

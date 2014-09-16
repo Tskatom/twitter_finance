@@ -1,0 +1,1 @@
+{"tokens": [{"form": "value", "lemma": "@", "POS": "NOUNSG", "value": "@", "neType": "any", "mode": "any"}, {"form": "value", "lemma": "sabinodelsur", "POS": "NOUNSG", "value": "sabinodelsur", "neType": "any", "mode": "any"}], "text": "@sabinodelsur", "dist": 1, "key": "@sabinodelsur", "language": "Spanish"}

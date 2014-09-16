@@ -11,6 +11,8 @@ import sys
 from etool import args
 import os
 import re
+import pandas as pd
+import numpy as np
 
 
 COUNTRY = ["Argentina", "Brazil", "Chile", "Colombia", "Costa Rica",
@@ -19,6 +21,8 @@ COUNTRY = ["Argentina", "Brazil", "Chile", "Colombia", "Costa Rica",
 ENTITIES = ['PRODUCT', 'IDENTIFIER:URL', 'TWITTER:HASHTAG',
             'PERSON', 'IDENTIFIER:MONEY', 'TWITTER:USERNAME',
             'NATIONALITY', 'ORGANIZATION', 'LOCATION']
+
+threshold = 0.1
 
 
 def comprehend_network(tweet_file):
@@ -217,6 +221,30 @@ def entity_network(tweet_file):
     return net
 
 
+def entity_corr_network(corr_file, threshold=threshold):
+    """
+    construct network based on the correlation between entities,
+    if the absolute value of corr between entities is bigger then
+    the threshold, then we will construct a edge between these two entities
+    """
+    corr_frame = pd.DataFrame.from_csv(corr_file)
+    #set the element 1 and the abs corr less than threshold to 0
+    nodes = corr_frame.columns.values
+    corr_matrix = corr_frame.values
+    corr_matrix[np.abs(corr_matrix) < threshold] = 0.0
+    #set the diagonal value to 0.0
+    np.fill_diagonal(corr_matrix, 0.0)
+
+    dt = [("weight", float)]
+    corr_matrix.dtype = dt
+    net = nx.from_numpy_matrix(corr_matrix)
+
+    #set up the node property
+    for i in range(len(nodes)):
+        net.node[i]["name"] = nodes[i]
+    return net
+
+
 def handle_by_folder(in_dir, out_dir, country, net_func=comprehend_network):
     files = os.listdir(in_dir)
     count = 0
@@ -243,6 +271,8 @@ def handle_by_file(out_dir, tweet_file, country, net_func=comprehend_network):
             net_type = "content"
         elif net_func == entity_network:
             net_type = "entity"
+        elif net_func == entity_corr_network:
+            net_type = "entity_corr"
         else:
             net_type = "normal"
 
@@ -262,7 +292,8 @@ def handle_by_file(out_dir, tweet_file, country, net_func=comprehend_network):
 
 def main():
     NET_TYPE = {"c": comprehend_network, "u": user2user_network,
-                "t": content_based_network, "e": entity_network}
+                "t": content_based_network, "e": entity_network,
+                "r": entity_corr_network}
     ap = args.get_parser()
     ap.add_argument('--out', type=str, help='graph output folder',
                     default='./')
@@ -275,9 +306,14 @@ def main():
                     help='The folder directly to he handled')
     ap.add_argument('--net', type=str,
                     help="type of network,each symbol represent each type:c")
+    ap.add_argument('--thre', type=float, default=0.1,
+                    help="threshold for corr")
     arg = ap.parse_args()
 
     assert arg.net, "Please input a network type"
+    global threshold
+    threshold = arg.thre
+
     if arg.c and len(arg.c) > 0:
         country_list = arg.c
     else:

@@ -28,9 +28,12 @@ CONTENT_FEATURE_ORDER = ['tweet_num', 'retweet_num', 'mention_num',
 USER_FEATURE_ORDER = ['average_weight', 'density', 'node_num',
                       'average_degree']
 
+ENTITY_FEATURE_ORDER = ['entity_num', 'density', 'weakly_componnet_num',
+                        'cluster_coefficient']
+
 RULE = {"t": "content", "c": "comprehend", "u": "user2user"}
 ORDER_RULE = {"t": CONTENT_FEATURE_ORDER, "c": FEATURE_ORDER,
-              "u": USER_FEATURE_ORDER}
+              "u": USER_FEATURE_ORDER, 'e': ENTITY_FEATURE_ORDER}
 
 
 def filter_regular_day(country, train_start, train_end, lag=1):

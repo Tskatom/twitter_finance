@@ -10,6 +10,8 @@ import boto
 from datetime import datetime, timedelta
 import time
 import hashlib
+import json
+
 
 __processor__ = 'twitter_warning_center'
 log = logs.getLogger(__processor__)
@@ -108,6 +110,7 @@ def svm_warning(t_domain, tweet_analysis, warn_queue):
     warn.setDate(t_date)
     warn.generateIdDate()
     warn.send(warn_queue)
+    return warn.warning
 
 
 class warning():
@@ -177,27 +180,39 @@ def main():
     ap.add_argument('--level', type=str, default="0.6",
                     help='The threhold')
     ap.add_argument('--svm', action='store_true')
+    ap.add_argument('--zmq', action='store_true')
+    ap.add_argument('--surr', type=str, help="surrogate file")
+    ap.add_argument('--warn', type=str, help="warning file")
     arg = ap.parse_args()
 
     logs.init(arg)
     queue.init(arg)
     assert arg.pub, "Please input a queue to publish warning"
-    assert arg.sub, "Please input a queue to sub surrogate message"
+    if arg.zmq:
+        assert arg.sub, "Please input a queue to sub surrogate message"
     conn = boto.connect_sdb()
     t_domain = get_domain(conn, "s_holiday")
 
-    with queue.open(arg.sub, 'r') as inq:
-        for m in inq:
-            try:
-                if arg.svm:
-                    svm_warning(t_domain, m, arg.pub)
-                else:
-                    warning_center(t_domain, m, arg.pub, float(arg.level))
-            except KeyboardInterrupt:
-                log.info('GOT SIGINIT, exiting!')
-                break
-            except:
-                log.exception("Exception in Process:%s" % sys.exc_info()[0])
+    if arg.zmq:
+        with queue.open(arg.sub, 'r') as inq:
+            for m in inq:
+                try:
+                    if arg.svm:
+                        svm_warning(t_domain, m, arg.pub)
+                    else:
+                        warning_center(t_domain, m, arg.pub, float(arg.level))
+                except KeyboardInterrupt:
+                    log.info('GOT SIGINIT, exiting!')
+                    break
+                except:
+                    log.exception("Exception in Process:%s" % sys.exc_info()[0])
+    else:
+        with open(arg.warn, "w") as w, open(arg.surr) as r:
+            if arg.svm:
+                for m in r:
+                    m = json.loads(m)
+                    warning = svm_warning(t_domain, m, arg.pub)
+                    w.write(json.dumps(warning) + "\n")
 
 
 if __name__ == "__main__":
