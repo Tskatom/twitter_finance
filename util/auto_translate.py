@@ -125,14 +125,17 @@ def main():
     ap.add_argument('--lan_to', type=str,
                     default='en', help='The target language')
     ap.add_argument('--out', type=str, help='The out put file')
+    ap.add_argument('--gmail', type=str, help='the gmail account', default='tskatom@gmail.com')
+    ap.add_argument('--passwd', type=str, help='the password to login gmail account')
     args = ap.parse_args()
 
     assert args.file, "Please indicate a input file path"
     assert args.lan_from, "Please set up source language type"
     assert args.lan_to, "Please set up target languate type"
     assert args.out, "Please setup a output file"
-
-    translator = Translator('tskatom@gmail.com', '01124789')
+    gmail = ap.gmail
+    passwd = ap.passwd
+    translator = Translator(gmail, passwd)
     translator.get_workspace()
     translator.clear_sheet()
     result = translator.translate_file(args.file, args.lan_from, args.lan_to)
